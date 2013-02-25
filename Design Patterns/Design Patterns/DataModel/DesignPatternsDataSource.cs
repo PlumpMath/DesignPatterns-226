@@ -234,18 +234,72 @@ namespace Design_Patterns.DataModel
 
         public DesignPatternsDataSource()
         {
+            String ITEM_CONTENT = String.Format("Item Content: {0}\n\n{0}\n\n{0}\n\n{0}\n\n{0}\n\n{0}\n\n{0}",
+                        "Curabitur class aliquam vestibulum nam curae maecenas sed integer cras phasellus suspendisse quisque donec dis praesent accumsan bibendum pellentesque condimentum adipiscing etiam consequat vivamus dictumst aliquam duis convallis scelerisque est parturient ullamcorper aliquet fusce suspendisse nunc hac eleifend amet blandit facilisi condimentum commodo scelerisque faucibus aenean ullamcorper ante mauris dignissim consectetuer nullam lorem vestibulum habitant conubia elementum pellentesque morbi facilisis arcu sollicitudin diam cubilia aptent vestibulum auctor eget dapibus pellentesque inceptos leo egestas interdum nulla consectetuer suspendisse adipiscing pellentesque proin lobortis sollicitudin augue elit mus congue fermentum parturient fringilla euismod feugiat");
+
             var creational = new DesignPatternGroup("Creational-Group",
                 "Creational",
                 "Design patterns which deal with object creation.",
                 "Assets/DarkGray.png",
-                "Group description: ");
+                "Group description: Design patterns which deal with object creation.");
             creational.Items.Add(new DesignPattern("Creational-Item-1",
                 "Abstract Factory",
                 "",
-                "Assets/LightGray.png",
-                "Description: Provides an abstract interface for creating families of related or dependent objects without specifying their concrete classes.", "", creational));
+                "Assets/AbstractFactory.png",
+                "Description: Provides an abstract interface for creating families of related or dependent objects without specifying their concrete classes.",
+                ITEM_CONTENT, 
+                creational));
 
-            this.AllGroups.Add(creational); 
+            creational.Items.Add(new DesignPattern("Creational-Item-2", 
+                "Builder", 
+                "",
+                "Assets/Builder.png", 
+                "Description: Separates the construction of a complex object from its representation so that the same construction process can create different representations", 
+                ITEM_CONTENT, 
+                creational));
+
+            creational.Items.Add(new DesignPattern("Creational-Item-3",
+                "Factory Method",
+                "",
+                "Assets/FactoryMethod.png",
+                "Description: Defines an interface for creating an object but allows subclasses to decide which class to instantiate. Factory method allows a class to defer instantiation to subclasses.",
+                ITEM_CONTENT,
+                creational));
+
+            creational.Items.Add(new DesignPattern("Creational-Item-4",
+                "Prototype",
+                "",
+                "Assets/Prototype.png",
+                "Description: ",
+                ITEM_CONTENT,
+                creational)); 
+
+            creational.Items.Add(new DesignPattern("Creational-Item-5", 
+                "Singleton", 
+                "", 
+                "Assets/Singleton.png", 
+                "Description", 
+                ITEM_CONTENT, 
+                creational)); 
+                
+
+            this.AllGroups.Add(creational);
+
+            var behavioral = new DesignPatternGroup("Behavioral-Group",
+                "Behavioral",
+                "Design patterns which identify common communication patterns between objects and realize these patterns.",
+                "Assets/DarkGray.png",
+                "Group description: Design patterns which identify common communication patterns between objects and realize these patterns. ");
+
+            this.AllGroups.Add(behavioral);
+
+            var structural = new DesignPatternGroup("Structural-Group",
+                "Structural",
+                "Design patterns which ease the design by identifying a simple way to realize relationships between entities.",
+                "Assets/DarkGray.png",
+                "Group description: Design patterns which ease the design by identifying a simple way to realize relationships between entities.");
+
+            this.AllGroups.Add(structural); 
         }
     }
 }

@@ -133,12 +133,17 @@
     <None Include="Design Patterns_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\AbstractFactory.png" />
+    <Content Include="Assets\Builder.png" />
     <Content Include="Assets\DesignPatternsSmallLogo.png" />
     <Content Include="Assets\DesignPatternsSplashScreen.png" />
     <Content Include="Assets\DesignPatternsSquareLogo.png" />
     <Content Include="Assets\DesignPatternsStoreLogo.png" />
     <Content Include="Assets\DesignPatternsWideLogo.png" />
+    <Content Include="Assets\FactoryMethod.png" />
     <Content Include="Assets\Logo.png" />
+    <Content Include="Assets\Prototype.png" />
+    <Content Include="Assets\Singleton.png" />
     <Content Include="Assets\SmallLogo.png" />
     <Content Include="Assets\SplashScreen.png" />
     <Content Include="Assets\StoreLogo.png" />

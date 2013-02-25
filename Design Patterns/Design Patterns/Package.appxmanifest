@@ -16,8 +16,8 @@
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Design_Patterns.App">
       <VisualElements DisplayName="Design Patterns" Logo="Assets\DesignPatternsSquareLogo.png" SmallLogo="Assets\DesignPatternsSmallLogo.png" Description="Design Patterns" ForegroundText="light" BackgroundColor="#CC3333">
-        <DefaultTile ShowName="allLogos" WideLogo="Assets/DesignPatternsWideLogo.png" />
-        <SplashScreen Image="Assets\DesignPatternsSplashScreen.png" BackgroundColor="#CC3333" />
+        <DefaultTile ShowName="wideLogoOnly" WideLogo="Assets/DesignPatternsWideLogo.png" />
+        <SplashScreen Image="Assets\DesignPatternsSplashScreen.png" BackgroundColor="#000000" />
       </VisualElements>
     </Application>
   </Applications>
