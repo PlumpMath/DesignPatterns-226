@@ -4,7 +4,7 @@
   <Properties>
     <DisplayName>Design Patterns</DisplayName>
     <PublisherDisplayName>Griffin</PublisherDisplayName>
-    <Logo>Assets\DesignPatternsStoreLogo.png</Logo>
+    <Logo>Assets\DesignPatternsStore2.png</Logo>
   </Properties>
   <Prerequisites>
     <OSMinVersion>6.2.1</OSMinVersion>
@@ -15,9 +15,9 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Design_Patterns.App">
-      <VisualElements DisplayName="Design Patterns" Logo="Assets\DesignPatternsSquareLogo.png" SmallLogo="Assets\DesignPatternsSmallLogo.png" Description="Design Patterns" ForegroundText="light" BackgroundColor="#CC3333">
-        <DefaultTile ShowName="wideLogoOnly" WideLogo="Assets/DesignPatternsWideLogo.png" />
-        <SplashScreen Image="Assets\DesignPatternsSplashScreen.png" BackgroundColor="#000000" />
+      <VisualElements DisplayName="Design Patterns" Logo="Assets\DesignPatternsSquare2.png" SmallLogo="Assets\DesignPatternsSmallLogo.png" Description="Design Patterns" ForegroundText="light" BackgroundColor="#CC3333">
+        <DefaultTile ShowName="logoOnly" WideLogo="Assets/DesignPatternsWide2.png" />
+        <SplashScreen Image="Assets\DesignPatternsSplashScreen2.png" BackgroundColor="#6CC7DC" />
       </VisualElements>
     </Application>
   </Applications>

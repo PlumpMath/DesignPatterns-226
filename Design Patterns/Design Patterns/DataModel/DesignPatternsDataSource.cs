@@ -240,7 +240,7 @@ namespace Design_Patterns.DataModel
             var creational = new DesignPatternGroup("Creational-Group",
                 "Creational",
                 "Design patterns which deal with object creation.",
-                "Assets/DarkGray.png",
+                "Assets/Creational.png",
                 "Group description: Design patterns which deal with object creation.");
             creational.Items.Add(new DesignPattern("Creational-Item-1",
                 "Abstract Factory",
@@ -288,8 +288,95 @@ namespace Design_Patterns.DataModel
             var behavioral = new DesignPatternGroup("Behavioral-Group",
                 "Behavioral",
                 "Design patterns which identify common communication patterns between objects and realize these patterns.",
-                "Assets/DarkGray.png",
+                "Assets/Behavioral.png",
                 "Group description: Design patterns which identify common communication patterns between objects and realize these patterns. ");
+
+            behavioral.Items.Add(new DesignPattern("Behavioral-Item-1", 
+                "Chain of Responsibility", 
+                "", 
+                "Assets/ChainOfResponsibility.png", 
+                "Description: ", 
+                ITEM_CONTENT, 
+                behavioral));
+
+            behavioral.Items.Add(new DesignPattern("Behavioral-Item-2",
+                "Command",
+                "",
+                "Assets/Command.png",
+                "Description: ",
+                ITEM_CONTENT,
+                behavioral));
+
+            behavioral.Items.Add(new DesignPattern("Behavioral-Item-3",
+                "Interpreter",
+                "",
+                "Assets/Interpreter.png",
+                "Description: ",
+                ITEM_CONTENT,
+                behavioral)); 
+
+            behavioral.Items.Add(new DesignPattern("Behavioral-Item-4", 
+                "Iterator", 
+                "", 
+                "Assets/Iterator.png", 
+                "Description: ",
+                ITEM_CONTENT, 
+                behavioral));
+
+            behavioral.Items.Add(new DesignPattern("Behavioral-Item-5",
+                "Mediator",
+                "",
+                "Assets/Mediator.png",
+                "Description: ",
+                ITEM_CONTENT,
+                behavioral));
+
+            behavioral.Items.Add(new DesignPattern("Behavioral-Item-6",
+                "Memento",
+                "",
+                "Assets/Memento.png",
+                "Description: ",
+                ITEM_CONTENT,
+                behavioral));
+
+            behavioral.Items.Add(new DesignPattern("Behavioral-Item-7",
+                "Observer",
+                "",
+                "Assets/Observer.png",
+                "Description: ",
+                ITEM_CONTENT,
+                behavioral));
+
+            behavioral.Items.Add(new DesignPattern("Behavioral-Item-8",
+                "State",
+                "",
+                "Assets/State.png",
+                "Description: ",
+                ITEM_CONTENT,
+                behavioral));
+
+            behavioral.Items.Add(new DesignPattern("Behavioral-Item-9",
+                "Strategy",
+                "",
+                "Assets/Strategy.png",
+                "Description: ",
+                ITEM_CONTENT, behavioral));
+
+            behavioral.Items.Add(new DesignPattern("Behavioral-Item-10",
+                "Template",
+                "",
+                "Assets/Template.png",
+                "Description: ",
+                ITEM_CONTENT, 
+                behavioral));
+
+            behavioral.Items.Add(new DesignPattern("Behavioral-Item-11",
+                "Visitor",
+                "",
+                "Assets/Visitor.png",
+                "Description: ",
+                ITEM_CONTENT,
+                behavioral)); 
 
             this.AllGroups.Add(behavioral);
 
@@ -298,6 +385,15 @@ namespace Design_Patterns.DataModel
                 "Design patterns which ease the design by identifying a simple way to realize relationships between entities.",
                 "Assets/DarkGray.png",
                 "Group description: Design patterns which ease the design by identifying a simple way to realize relationships between entities.");
+
+            structural.Items.Add(new DesignPattern("Structural-Item-1",
+                "Adapter",
+                "",
+                "Assets/Creational.png",
+                "Description: ",
+                ITEM_CONTENT,
+                structural)); 
+                
 
             this.AllGroups.Add(structural); 
         }

@@ -134,22 +134,39 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\AbstractFactory.png" />
+    <Content Include="Assets\Behavioral.png" />
     <Content Include="Assets\Builder.png" />
+    <Content Include="Assets\ChainOfResponsibility.png" />
+    <Content Include="Assets\Command.png" />
+    <Content Include="Assets\Creational.png" />
     <Content Include="Assets\DesignPatternsSmallLogo.png" />
     <Content Include="Assets\DesignPatternsSplashScreen.png" />
+    <Content Include="Assets\DesignPatternsSplashScreen2.png" />
+    <Content Include="Assets\DesignPatternsSquare2.png" />
     <Content Include="Assets\DesignPatternsSquareLogo.png" />
+    <Content Include="Assets\DesignPatternsStore2.png" />
     <Content Include="Assets\DesignPatternsStoreLogo.png" />
+    <Content Include="Assets\DesignPatternsWide2.png" />
     <Content Include="Assets\DesignPatternsWideLogo.png" />
     <Content Include="Assets\FactoryMethod.png" />
+    <Content Include="Assets\Interpreter.png" />
+    <Content Include="Assets\Iterator.png" />
     <Content Include="Assets\Logo.png" />
+    <Content Include="Assets\Mediator.png" />
+    <Content Include="Assets\Memento.png" />
+    <Content Include="Assets\Observer.png" />
     <Content Include="Assets\Prototype.png" />
     <Content Include="Assets\Singleton.png" />
     <Content Include="Assets\SmallLogo.png" />
     <Content Include="Assets\SplashScreen.png" />
+    <Content Include="Assets\State.png" />
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\LightGray.png" />
     <Content Include="Assets\MediumGray.png" />
     <Content Include="Assets\DarkGray.png" />
+    <Content Include="Assets\Strategy.png" />
+    <Content Include="Assets\Template.png" />
+    <Content Include="Assets\Visitor.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
