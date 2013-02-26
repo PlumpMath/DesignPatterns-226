@@ -15,6 +15,10 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.UI.ApplicationSettings;
+using Windows.UI;
+using Callisto.Controls;
+using Design_Patterns.Pages;
 
 // The Grid App template is documented at http://go.microsoft.com/fwlink/?LinkId=234226
 
@@ -71,6 +75,9 @@ namespace Design_Patterns
 
                 // Place the frame in the current Window
                 Window.Current.Content = rootFrame;
+
+                // Settings
+                SettingsPane.GetForCurrentView().CommandsRequested += Settings_CommandsRequested;
             }
             if (rootFrame.Content == null)
             {
@@ -84,6 +91,29 @@ namespace Design_Patterns
             }
             // Ensure the current window is active
             Window.Current.Activate();
+        }
+
+        /// <summary>
+        /// Define Settings Pages for the application once the OnCommandsRequested event is raised.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        void Settings_CommandsRequested(SettingsPane sender, SettingsPaneCommandsRequestedEventArgs args)
+        {
+            Color _background = Color.FromArgb(255, 178, 34, 34);
+
+            // Add an About command
+            var About = new SettingsCommand("About", "About", (handler) =>
+            {
+                var settings = new SettingsFlyout();
+                settings.Content = new AboutPage();
+                settings.HeaderBrush = new SolidColorBrush(_background);
+                settings.Background = new SolidColorBrush(_background);
+                settings.HeaderText = "About";
+                settings.IsOpen = true;
+            });
+
+            args.Request.ApplicationCommands.Add(About);
         }
 
         /// <summary>

@@ -9,6 +9,7 @@
     xmlns:common="using:Design_Patterns.Common"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:UI="using:Microsoft.Advertising.WinRT.UI"
     mc:Ignorable="d">
 
     <Page.Resources>
@@ -22,7 +23,23 @@
             Source="{Binding Groups}"
             IsSourceGrouped="true"
             ItemsPath="TopItems"
-            d:Source="{Binding AllGroups, Source={d:DesignInstance Type=data:SampleDataSource, IsDesignTimeCreatable=True}}"/>
+            d:Source="{Binding AllGroups, Source={d:DesignInstance Type=data:SampleDataSource, IsDesignTimeCreatable=True}}">
+            
+            </CollectionViewSource>
+        
+        <DataTemplate x:Key="AdTemplate">
+            <Grid Width="160" Height="600">
+                <UI:AdControl
+                    x:Name="adControl" 
+                    HorizontalAlignment="Center" 
+                    Height="600" 
+                    Margin="0,0,0,0" 
+                    Opacity="1"
+                    VerticalAlignment="Center" 
+                    Width="160" 
+                     ApplicationId="95737f6b-692f-4bd1-bfb5-4a6a7b666fee" AdUnitId="117712" /> 
+            </Grid>
+        </DataTemplate>
     </Page.Resources>
 
     <!--
@@ -30,18 +47,20 @@
         * Row 0 contains the back button and page title
         * Row 1 contains the rest of the page layout
     -->
-    <Grid Style="{StaticResource LayoutRootStyle}">
+    <Grid x:Name="MainGrid" Style="{StaticResource LayoutRootStyle}">
         <Grid.RowDefinitions>
             <RowDefinition Height="140"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        
 
-        <!-- Horizontal scrolling grid used in most view states -->
-        <GridView
+            <!-- Horizontal scrolling grid used in most view states -->
+            <GridView
             x:Name="itemGridView"
             AutomationProperties.AutomationId="ItemGridView"
             AutomationProperties.Name="Grouped Items"
             Grid.RowSpan="2"
+            Grid.Column="0"
             Padding="116,137,40,46"
             ItemsSource="{Binding Source={StaticResource groupedItemsViewSource}}"
             ItemTemplate="{StaticResource Standard250x250ItemTemplate}"
@@ -49,37 +68,69 @@
             IsSwipeEnabled="false"
             IsItemClickEnabled="True"
             ItemClick="ItemView_ItemClick">
+            <!--<GridView.ItemTemplateSelector>
+                <local:CustomTemplateSelector
+                    AdvertTemplate="{StaticResource AdTemplate}"
+                    NormalTemplate="{StaticResource Standard250x250ItemTemplate}"
+                    />
+            </GridView.ItemTemplateSelector>-->
 
             <GridView.ItemsPanel>
-                <ItemsPanelTemplate>                        
-                    <VirtualizingStackPanel Orientation="Horizontal"/>
-                </ItemsPanelTemplate>
-            </GridView.ItemsPanel>
-            <GridView.GroupStyle>
-                <GroupStyle>
-                    <GroupStyle.HeaderTemplate>
-                        <DataTemplate>
-                            <Grid Margin="1,0,0,6">
-                                <Button
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </GridView.ItemsPanel>
+                <GridView.GroupStyle>
+                    <GroupStyle>
+                        <GroupStyle.HeaderTemplate>
+                            <DataTemplate>
+                                <Grid Margin="1,0,0,6">
+                                    <Button
                                     AutomationProperties.Name="Group Title"
                                     Click="Header_Click"
                                     Style="{StaticResource TextPrimaryButtonStyle}" >
-                                    <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="{Binding Title}" Margin="3,-7,10,10" Style="{StaticResource GroupHeaderTextStyle}" />
-                                        <TextBlock Text="{StaticResource ChevronGlyph}" FontFamily="Segoe UI Symbol" Margin="0,-7,0,10" Style="{StaticResource GroupHeaderTextStyle}"/>
-                                    </StackPanel>
-                                </Button>
-                            </Grid>
-                        </DataTemplate>
-                    </GroupStyle.HeaderTemplate>
-                    <GroupStyle.Panel>
-                        <ItemsPanelTemplate>
-                            <VariableSizedWrapGrid Orientation="Vertical" Margin="0,0,80,0"/>
-                        </ItemsPanelTemplate>
-                    </GroupStyle.Panel>
-                </GroupStyle>
-            </GridView.GroupStyle>
-        </GridView>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="{Binding Title}" Margin="3,-7,10,10" Style="{StaticResource GroupHeaderTextStyle}" />
+                                            <TextBlock Text="{StaticResource ChevronGlyph}" FontFamily="Segoe UI Symbol" Margin="0,-7,0,10" Style="{StaticResource GroupHeaderTextStyle}"/>
+                                        </StackPanel>
+                                    </Button>
+
+                                </Grid>
+                            </DataTemplate>
+
+                        </GroupStyle.HeaderTemplate>
+                        <GroupStyle.Panel>
+                            <ItemsPanelTemplate>
+                                <VariableSizedWrapGrid Orientation="Vertical" Margin="0,0,80,0"/>
+                                
+
+                            </ItemsPanelTemplate>
+                        </GroupStyle.Panel>
+
+                    </GroupStyle>
+                    
+                </GridView.GroupStyle>
+                
+            </GridView>
+
+        <!--<UI:AdControl
+                    x:Name="adControl" 
+                    HorizontalAlignment="Center" 
+                    Height="600" 
+                    Margin="0,0,0,0" 
+            Grid.Row="1"
+                    Grid.Column="1"
+                    Opacity="1"
+                    VerticalAlignment="Center" 
+                    Width="160" 
+                     ApplicationId="95737f6b-692f-4bd1-bfb5-4a6a7b666fee" AdUnitId="117712" />-->
+
+
+
+
+
+
+
 
         <!-- Vertical scrolling list only used when snapped -->
         <ListView
@@ -118,6 +169,7 @@
             </ListView.GroupStyle>
         </ListView>
 
+        
         <!-- Back button and page title -->
         <Grid>
             <Grid.ColumnDefinitions>

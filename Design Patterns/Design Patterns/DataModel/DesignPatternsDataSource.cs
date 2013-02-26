@@ -91,6 +91,8 @@ namespace Design_Patterns.DataModel
 
     public class DesignPattern : DesignPatternCommon
     {
+
+        
         public DesignPattern(String uniqueId, String title, String subtitle, String imagePath, String description, String content, DesignPatternGroup group)
             : base(uniqueId, title, subtitle, imagePath, description)
         {
@@ -196,6 +198,15 @@ namespace Design_Patterns.DataModel
         public ObservableCollection<DesignPattern> TopItems
         {
             get { return this._topItem; }
+        }
+    }
+
+    public class AdItem :  DesignPattern
+    {
+        public AdItem(String uniqueId, String title, String subtitle, String imagePath, String description, String content, DesignPatternGroup group)
+            : base(uniqueId, title, subtitle, imagePath, description, content, group)
+        {
+            
         }
     }
 
@@ -392,7 +403,9 @@ namespace Design_Patterns.DataModel
                 "Assets/Creational.png",
                 "Description: ",
                 ITEM_CONTENT,
-                structural)); 
+                structural));
+
+            
                 
 
             this.AllGroups.Add(structural); 

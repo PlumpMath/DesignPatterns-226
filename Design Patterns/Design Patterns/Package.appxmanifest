@@ -3,7 +3,7 @@
   <Identity Name="97d274b4-eaaa-4a14-bd9b-955de5a7d3cf" Publisher="CN=Griffin" Version="1.0.0.0" />
   <Properties>
     <DisplayName>Design Patterns</DisplayName>
-    <PublisherDisplayName>Griffin</PublisherDisplayName>
+    <PublisherDisplayName>Griffin Fujioka</PublisherDisplayName>
     <Logo>Assets\DesignPatternsStore2.png</Logo>
   </Properties>
   <Prerequisites>

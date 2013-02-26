@@ -27,6 +27,16 @@ namespace Design_Patterns
         public GroupedItemsPage()
         {
             this.InitializeComponent();
+
+            Loaded += OnLoaded; 
+            
+        }
+
+        private void OnLoaded(object sender, RoutedEventArgs e)
+        {
+            var GridViewWidth = itemGridView.ActualWidth;
+            var grid_length_width = new Windows.UI.Xaml.GridLength(GridViewWidth, GridUnitType.Pixel);
+            //ContentGrid.ColumnDefinitions[0].Width = grid_length_width;
         }
 
         /// <summary>
@@ -40,10 +50,11 @@ namespace Design_Patterns
         /// session.  This will be null the first time a page is visited.</param>
         protected override void LoadState(Object navigationParameter, Dictionary<String, Object> pageState)
         {
-            // TODO: Create an appropriate data model for your problem domain to replace the sample data
+    
             var designPatternGroups = DesignPatternsDataSource.GetGroups((String)navigationParameter); 
-            var sampleDataGroups = SampleDataSource.GetGroups((String)navigationParameter);
             this.DefaultViewModel["Groups"] = designPatternGroups;
+
+            
         }
 
         /// <summary>
