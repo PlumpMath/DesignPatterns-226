@@ -394,18 +394,56 @@ namespace Design_Patterns.DataModel
             var structural = new DesignPatternGroup("Structural-Group",
                 "Structural",
                 "Design patterns which ease the design by identifying a simple way to realize relationships between entities.",
-                "Assets/DarkGray.png",
+                "Assets/Structural.png",
                 "Group description: Design patterns which ease the design by identifying a simple way to realize relationships between entities.");
 
             structural.Items.Add(new DesignPattern("Structural-Item-1",
                 "Adapter",
                 "",
-                "Assets/Creational.png",
+                "Assets/Adapter.png",
                 "Description: ",
                 ITEM_CONTENT,
                 structural));
 
-            
+            structural.Items.Add(new DesignPattern("Structural-Item-2",
+                "Bridge",
+                "",
+                "Assets/Bridge.png",
+                "Description: ",
+                ITEM_CONTENT,
+                structural));
+
+            structural.Items.Add(new DesignPattern("Structural-Item-3",
+                "Decorator",
+                "",
+                "Assets/Decorator.png",
+                "Description: ",
+                ITEM_CONTENT,
+                structural));
+
+            structural.Items.Add(new DesignPattern("Structural-Item-4",
+                "Facade",
+                "",
+                "Assets/Facade.png",
+                "Description: ",
+                ITEM_CONTENT,
+                structural));
+
+            structural.Items.Add(new DesignPattern("Structural-Item-5",
+                "Proxy",
+                "",
+                "Assets/Proxy.png",
+                "Description: ",
+                ITEM_CONTENT,
+                structural));
+
+            structural.Items.Add(new DesignPattern("Structural-Item-6",
+                "Flyweight",
+                "",
+                "Assets/Flyweight.png",
+                "Description: ",
+                ITEM_CONTENT,
+                structural));
                 
 
             this.AllGroups.Add(structural); 
