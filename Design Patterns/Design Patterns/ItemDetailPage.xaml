@@ -9,6 +9,7 @@
     xmlns:common="using:Design_Patterns.Common"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:UI="using:Microsoft.Advertising.WinRT.UI"
     mc:Ignorable="d">
 
     <Page.Resources>
@@ -66,7 +67,7 @@
 
                             <!-- Content is allowed to flow across as many columns as needed -->
                             <common:RichTextColumns x:Name="richTextColumns" Margin="117,0,117,47">
-                                <RichTextBlock x:Name="richTextBlock" Width="560" Style="{StaticResource ItemRichTextStyle}" IsTextSelectionEnabled="False">
+                                <RichTextBlock x:Name="richTextBlock" Width="580" Style="{StaticResource ItemRichTextStyle}" IsTextSelectionEnabled="False">
                                     <Paragraph>
                                         <Run FontSize="26.667" FontWeight="Light" Text="{Binding Title}"/>
                                         <LineBreak/>
@@ -75,7 +76,8 @@
                                     </Paragraph>
                                     <Paragraph LineStackingStrategy="MaxHeight">
                                         <InlineUIContainer>
-                                            <Image x:Name="image" MaxHeight="480" Margin="0,20,0,10" Stretch="Uniform" Source="{Binding Image}" AutomationProperties.Name="{Binding Title}"/>
+                                            <Image x:Name="image" MaxHeight="480" Margin="0,20,0,200" Stretch="Uniform" Source="{Binding UMLImage}" AutomationProperties.Name="{Binding Title}"/>
+                                            
                                         </InlineUIContainer>
                                     </Paragraph>
                                     <Paragraph>
@@ -147,6 +149,18 @@
             </Grid.ColumnDefinitions>
             <Button x:Name="backButton" Click="GoBack" IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}"/>
             <TextBlock x:Name="pageTitle" Text="{Binding Title}" Style="{StaticResource PageHeaderTextStyle}" Grid.Column="1" IsHitTestVisible="false"/>
+            <UI:AdControl
+            	x:Name="adControl" 
+            	HorizontalAlignment="Right" 
+            	Width="292" 
+            	Height="62" 
+            	Margin="0,0,0,0" 
+            	Grid.Row="1"
+            	Grid.Column="1"
+            	Opacity="1"
+            	VerticalAlignment="Center" 
+            	ApplicationId="95737f6b-692f-4bd1-bfb5-4a6a7b666fee" 
+                AdUnitId="122179" />
         </Grid>
 
         <VisualStateManager.VisualStateGroups>

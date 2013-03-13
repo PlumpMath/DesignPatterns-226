@@ -12,8 +12,7 @@
     <Grid>
         <StackPanel>
             <TextBlock Text="Design Patterns" FontFamily="Segoe UI" FontWeight="SemiLight" FontSize="26.667" />
-            <TextBlock Text="Created by Griffin Fujioka. I am a student developer at Washington State University. &#xA;&#xA;Go Cougs!&#xA;" FontFamily="Segoe UI" FontWeight="SemiLight" FontSize="14" TextWrapping="Wrap" />
-
+            <TextBlock Text="Created by Griffin Fujioka. I am a student developer at Washington State University. &#xA;&#xA;Go Cougs!&#xA; &#xA; &#xA;If you own and wish to have any images contained within this application removed, please e-mail me at griffin.fujioka@email.wsu.edu and they will be removed in a timely manner." FontFamily="Segoe UI" FontWeight="SemiLight" FontSize="14" TextWrapping="Wrap" />
         </StackPanel>
     </Grid>
 </UserControl>

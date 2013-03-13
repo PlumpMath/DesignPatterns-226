@@ -112,6 +112,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Common\ImagesToSingleConverter.cs" />
     <Compile Include="DataModel\CustomTemplateSelector.cs" />
     <Compile Include="DataModel\DesignPatternsDataSource.cs" />
     <Compile Include="GroupedItemsPage.xaml.cs">
@@ -144,10 +145,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\AbstractFactory.png" />
+    <Content Include="Assets\AbstractFactoryUML.png" />
     <Content Include="Assets\Adapter.png" />
     <Content Include="Assets\Behavioral.png" />
     <Content Include="Assets\Bridge.png" />
     <Content Include="Assets\Builder.png" />
+    <Content Include="Assets\BuilderUML.png" />
     <Content Include="Assets\ChainOfResponsibility.png" />
     <Content Include="Assets\Command.png" />
     <Content Include="Assets\Creational.png" />
@@ -163,6 +166,7 @@
     <Content Include="Assets\DesignPatternsWideLogo.png" />
     <Content Include="Assets\Facade.png" />
     <Content Include="Assets\FactoryMethod.png" />
+    <Content Include="Assets\FactoryMethodUML.jpeg" />
     <Content Include="Assets\Flyweight.png" />
     <Content Include="Assets\Interpreter.png" />
     <Content Include="Assets\Iterator.png" />
@@ -170,9 +174,11 @@
     <Content Include="Assets\Mediator.png" />
     <Content Include="Assets\Memento.png" />
     <Content Include="Assets\Observer.png" />
+    <Content Include="Assets\PrototypeUML.png" />
     <Content Include="Assets\Proxy.png" />
     <Content Include="Assets\Prototype.png" />
     <Content Include="Assets\Singleton.png" />
+    <Content Include="Assets\SingletonUML.png" />
     <Content Include="Assets\SmallLogo.png" />
     <Content Include="Assets\SplashScreen.png" />
     <Content Include="Assets\State.png" />

@@ -54,26 +54,20 @@
         </Grid.RowDefinitions>
         
 
-            <!-- Horizontal scrolling grid used in most view states -->
+  
             <GridView
             x:Name="itemGridView"
             AutomationProperties.AutomationId="ItemGridView"
             AutomationProperties.Name="Grouped Items"
-            Grid.RowSpan="2"
-            Grid.Column="0"
-            Padding="116,137,40,46"
+            Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+            Margin="0,-3,0,0"
+            Padding="95,0,40,46"
             ItemsSource="{Binding Source={StaticResource groupedItemsViewSource}}"
             ItemTemplate="{StaticResource Standard250x250ItemTemplate}"
             SelectionMode="None"
             IsSwipeEnabled="false"
             IsItemClickEnabled="True"
             ItemClick="ItemView_ItemClick">
-            <!--<GridView.ItemTemplateSelector>
-                <local:CustomTemplateSelector
-                    AdvertTemplate="{StaticResource AdTemplate}"
-                    NormalTemplate="{StaticResource Standard250x250ItemTemplate}"
-                    />
-            </GridView.ItemTemplateSelector>-->
 
             <GridView.ItemsPanel>
                     <ItemsPanelTemplate>
@@ -112,19 +106,6 @@
                 </GridView.GroupStyle>
                 
             </GridView>
-
-        <!--<UI:AdControl
-                    x:Name="adControl" 
-                    HorizontalAlignment="Center" 
-                    Height="600" 
-                    Margin="0,0,0,0" 
-            Grid.Row="1"
-                    Grid.Column="1"
-                    Opacity="1"
-                    VerticalAlignment="Center" 
-                    Width="160" 
-                     ApplicationId="95737f6b-692f-4bd1-bfb5-4a6a7b666fee" AdUnitId="117712" />-->
-
 
 
 
@@ -178,6 +159,18 @@
             </Grid.ColumnDefinitions>
             <Button x:Name="backButton" Click="GoBack" IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}"/>
             <TextBlock x:Name="pageTitle" Text="{StaticResource AppName}" Grid.Column="1" IsHitTestVisible="false" Style="{StaticResource PageHeaderTextStyle}"/>
+            <UI:AdControl
+            	x:Name="adControl" 
+            	HorizontalAlignment="Right" 
+            	Width="292" 
+            	Height="62" 
+            	Margin="0,0,0,0" 
+            	Grid.Row="1"
+            	Grid.Column="1"
+            	Opacity="1"
+            	VerticalAlignment="Center" 
+            	ApplicationId="95737f6b-692f-4bd1-bfb5-4a6a7b666fee" 
+                AdUnitId="122179" />
         </Grid>
 
         <VisualStateManager.VisualStateGroups>

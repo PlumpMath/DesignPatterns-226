@@ -3,6 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Design_Patterns"
+    xmlns:Common="using:Design_Patterns.Common" 
     xmlns:localData="using:Design_Patterns.Data">
 
     <Application.Resources>
@@ -19,6 +20,7 @@
             <!-- Application-specific resources -->
 
             <x:String x:Key="AppName">Design Patterns</x:String>
+            <!--<Common:ImagesToSingleConverter x:Key="SingleImage"/>-->
         </ResourceDictionary>
     </Application.Resources>
 </Application>

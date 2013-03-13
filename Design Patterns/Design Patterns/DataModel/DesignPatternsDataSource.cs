@@ -19,13 +19,14 @@ namespace Design_Patterns.DataModel
     {
         private static Uri _baseUri = new Uri("ms-appx:///");
 
-        public DesignPatternCommon(String uniqueId, String title, String subtitle, String imagePath, String description)
+        public DesignPatternCommon(String uniqueId, String title, String subtitle, String imagePath, String description, String umlImagePath)
         {
             this._uniqueId = uniqueId;
             this._title = title;
             this._subtitle = subtitle;
             this._description = description;
             this._imagePath = imagePath;
+            this._umlImagePath = umlImagePath; 
         }
 
         private string _uniqueId = string.Empty;
@@ -76,11 +77,33 @@ namespace Design_Patterns.DataModel
             }
         }
 
+        private ImageSource _umlImage = null;
+        private String _umlImagePath = null;
+        public ImageSource UMLImage
+        {
+            get
+            {
+                if (this._umlImage == null && this._umlImagePath != null)
+                {
+                    this._umlImage = new BitmapImage(new Uri(DesignPatternCommon._baseUri, this._umlImagePath));
+                }
+
+                return this._umlImage;
+            }
+        }
+
         public void SetImage(String path)
         {
             this._image = null;
             this._imagePath = path;
             this.OnPropertyChanged("Image");
+        }
+
+        public void SetUMLImage(String path)
+        {
+            this._umlImage = null;
+            this._umlImagePath = path;
+            this.OnPropertyChanged("UMLImage"); 
         }
 
         public override string ToString()
@@ -93,8 +116,8 @@ namespace Design_Patterns.DataModel
     {
 
         
-        public DesignPattern(String uniqueId, String title, String subtitle, String imagePath, String description, String content, DesignPatternGroup group)
-            : base(uniqueId, title, subtitle, imagePath, description)
+        public DesignPattern(String uniqueId, String title, String subtitle, String imagePath, String description, String umlImagePath, String content, DesignPatternGroup group)
+            : base(uniqueId, title, subtitle, imagePath, description, umlImagePath)
         {
             this._content = content;
             this._group = group;
@@ -118,8 +141,8 @@ namespace Design_Patterns.DataModel
     public class DesignPatternGroup : DesignPatternCommon
     {
 
-        public DesignPatternGroup(String uniqueId, String title, String subtitle, String imagePath, String description)
-            : base(uniqueId, title, subtitle, imagePath, description)
+        public DesignPatternGroup(String uniqueId, String title, String subtitle, String imagePath, String description, String umlImagePath)
+            : base(uniqueId, title, subtitle, imagePath, description, umlImagePath)
         {
             Items.CollectionChanged += ItemsCollectionChanged;
         }
@@ -203,8 +226,8 @@ namespace Design_Patterns.DataModel
 
     public class AdItem :  DesignPattern
     {
-        public AdItem(String uniqueId, String title, String subtitle, String imagePath, String description, String content, DesignPatternGroup group)
-            : base(uniqueId, title, subtitle, imagePath, description, content, group)
+        public AdItem(String uniqueId, String title, String subtitle, String imagePath, String description, String umlImagePath, String content, DesignPatternGroup group)
+            : base(uniqueId, title, subtitle, imagePath, description, umlImagePath, content, group)
         {
             
         }
@@ -252,201 +275,207 @@ namespace Design_Patterns.DataModel
                 "Creational",
                 "Design patterns which deal with object creation.",
                 "Assets/Creational.png",
-                "Group description: Design patterns which deal with object creation.");
+                "Group description: Design patterns which deal with object creation and help to make a system independent of how its objects are created, composed and represented.",
+                "");
             creational.Items.Add(new DesignPattern("Creational-Item-1",
                 "Abstract Factory",
-                "",
+                "Declare an interface for creating different types of objects.",
                 "Assets/AbstractFactory.png",
-                "Description: Provides an abstract interface for creating families of related or dependent objects without specifying their concrete classes.",
-                ITEM_CONTENT, 
+                "Description: Provides an interface for creating families of related or dependent objects without specifying their concrete classes.",
+                "Assets/AbstractFactoryUML.png",
+                "Use an abstract factory pattern when:\n\n\tA system should be independent of how its products are created, composed and represented; a system should be configured with one of multiple families of products; a family of related product objects is designed to be used together, and you need to enforce this constraint. You want to provide a class library of products, and you want to reveal just their interfaces, not their implementations.\n\nAdvantages: \n\n\tIsolate concrete classes from the client. \n\tExchanging product families is easy. \n\tIt promotes consistency among products.\n\nDisadvantages: \n\n\tSupporting new kinds of products requires extending the abstract interface which implies that all of its derived concrete classes also must change. ", 
                 creational));
 
-            creational.Items.Add(new DesignPattern("Creational-Item-2", 
-                "Builder", 
-                "",
-                "Assets/Builder.png", 
-                "Description: Separates the construction of a complex object from its representation so that the same construction process can create different representations", 
-                ITEM_CONTENT, 
+            creational.Items.Add(new DesignPattern("Creational-Item-2",
+                "Builder",
+                "Separate the construction of a complex object from its representation so that the same construction process can create different representations.",
+                "Assets/Builder.png",
+                "Description: Separates the construction of a complex object from its representation so that the same construction process can create different representations",
+                "Assets/BuilderUML.png",
+                "Use a builder pattern when:\n\n\t The algorithm for creating a complex object should be independent of the parts that make up the object and how they're assembled; the construction process must allow different representations for the object that's constructed",
                 creational));
 
             creational.Items.Add(new DesignPattern("Creational-Item-3",
                 "Factory Method",
-                "",
+                "Define an interface for creating an object but allows subclasses to decide which class to instantiate.",
                 "Assets/FactoryMethod.png",
                 "Description: Defines an interface for creating an object but allows subclasses to decide which class to instantiate. Factory method allows a class to defer instantiation to subclasses.",
+                "Assets/FactoryMethodUML.jpeg",
                 ITEM_CONTENT,
                 creational));
 
             creational.Items.Add(new DesignPattern("Creational-Item-4",
                 "Prototype",
-                "",
+                "Specify the kinds of objects to create using a prototypical instance, and create n ew objects by copying this prototype.",
                 "Assets/Prototype.png",
-                "Description: ",
+                "Description: Specify the kinds of objects to create using a prototypical instance, and create new objects by copying this prototype.",
+                "Assets/PrototypeUML.png",
                 ITEM_CONTENT,
-                creational)); 
+                creational));
 
-            creational.Items.Add(new DesignPattern("Creational-Item-5", 
-                "Singleton", 
-                "", 
-                "Assets/Singleton.png", 
-                "Description", 
-                ITEM_CONTENT, 
+            creational.Items.Add(new DesignPattern("Creational-Item-5",
+                "Singleton",
+                "Ensure a class only has one instance, and provide a global point of access to it. ",
+                "Assets/Singleton.png",
+                "Description",
+                "Assets/SingletonUML.png",
+                ITEM_CONTENT,
                 creational)); 
                 
 
             this.AllGroups.Add(creational);
 
-            var behavioral = new DesignPatternGroup("Behavioral-Group",
-                "Behavioral",
-                "Design patterns which identify common communication patterns between objects and realize these patterns.",
-                "Assets/Behavioral.png",
-                "Group description: Design patterns which identify common communication patterns between objects and realize these patterns. ");
+            //var behavioral = new DesignPatternGroup("Behavioral-Group",
+            //    "Behavioral",
+            //    "Design patterns which identify common communication patterns between objects and realize these patterns.",
+            //    "Assets/Behavioral.png",
+            //    "Group description: Design patterns which identify common communication patterns between objects and realize these patterns. ");
 
-            behavioral.Items.Add(new DesignPattern("Behavioral-Item-1", 
-                "Chain of Responsibility", 
-                "", 
-                "Assets/ChainOfResponsibility.png", 
-                "Description: ", 
-                ITEM_CONTENT, 
-                behavioral));
+            //behavioral.Items.Add(new DesignPattern("Behavioral-Item-1", 
+            //    "Chain of Responsibility", 
+            //    "", 
+            //    "Assets/ChainOfResponsibility.png", 
+            //    "Description: ", 
+            //    ITEM_CONTENT, 
+            //    behavioral));
 
-            behavioral.Items.Add(new DesignPattern("Behavioral-Item-2",
-                "Command",
-                "",
-                "Assets/Command.png",
-                "Description: ",
-                ITEM_CONTENT,
-                behavioral));
+            //behavioral.Items.Add(new DesignPattern("Behavioral-Item-2",
+            //    "Command",
+            //    "",
+            //    "Assets/Command.png",
+            //    "Description: ",
+            //    ITEM_CONTENT,
+            //    behavioral));
 
-            behavioral.Items.Add(new DesignPattern("Behavioral-Item-3",
-                "Interpreter",
-                "",
-                "Assets/Interpreter.png",
-                "Description: ",
-                ITEM_CONTENT,
-                behavioral)); 
+            //behavioral.Items.Add(new DesignPattern("Behavioral-Item-3",
+            //    "Interpreter",
+            //    "",
+            //    "Assets/Interpreter.png",
+            //    "Description: ",
+            //    ITEM_CONTENT,
+            //    behavioral)); 
 
-            behavioral.Items.Add(new DesignPattern("Behavioral-Item-4", 
-                "Iterator", 
-                "", 
-                "Assets/Iterator.png", 
-                "Description: ",
-                ITEM_CONTENT, 
-                behavioral));
+            //behavioral.Items.Add(new DesignPattern("Behavioral-Item-4", 
+            //    "Iterator", 
+            //    "", 
+            //    "Assets/Iterator.png", 
+            //    "Description: ",
+            //    ITEM_CONTENT, 
+            //    behavioral));
 
-            behavioral.Items.Add(new DesignPattern("Behavioral-Item-5",
-                "Mediator",
-                "",
-                "Assets/Mediator.png",
-                "Description: ",
-                ITEM_CONTENT,
-                behavioral));
+            //behavioral.Items.Add(new DesignPattern("Behavioral-Item-5",
+            //    "Mediator",
+            //    "",
+            //    "Assets/Mediator.png",
+            //    "Description: ",
+            //    ITEM_CONTENT,
+            //    behavioral));
 
-            behavioral.Items.Add(new DesignPattern("Behavioral-Item-6",
-                "Memento",
-                "",
-                "Assets/Memento.png",
-                "Description: ",
-                ITEM_CONTENT,
-                behavioral));
+            //behavioral.Items.Add(new DesignPattern("Behavioral-Item-6",
+            //    "Memento",
+            //    "",
+            //    "Assets/Memento.png",
+            //    "Description: ",
+            //    ITEM_CONTENT,
+            //    behavioral));
 
-            behavioral.Items.Add(new DesignPattern("Behavioral-Item-7",
-                "Observer",
-                "",
-                "Assets/Observer.png",
-                "Description: ",
-                ITEM_CONTENT,
-                behavioral));
+            //behavioral.Items.Add(new DesignPattern("Behavioral-Item-7",
+            //    "Observer",
+            //    "",
+            //    "Assets/Observer.png",
+            //    "Description: ",
+            //    ITEM_CONTENT,
+            //    behavioral));
 
-            behavioral.Items.Add(new DesignPattern("Behavioral-Item-8",
-                "State",
-                "",
-                "Assets/State.png",
-                "Description: ",
-                ITEM_CONTENT,
-                behavioral));
+            //behavioral.Items.Add(new DesignPattern("Behavioral-Item-8",
+            //    "State",
+            //    "",
+            //    "Assets/State.png",
+            //    "Description: ",
+            //    ITEM_CONTENT,
+            //    behavioral));
 
-            behavioral.Items.Add(new DesignPattern("Behavioral-Item-9",
-                "Strategy",
-                "",
-                "Assets/Strategy.png",
-                "Description: ",
-                ITEM_CONTENT, behavioral));
+            //behavioral.Items.Add(new DesignPattern("Behavioral-Item-9",
+            //    "Strategy",
+            //    "",
+            //    "Assets/Strategy.png",
+            //    "Description: ",
+            //    ITEM_CONTENT, behavioral));
 
-            behavioral.Items.Add(new DesignPattern("Behavioral-Item-10",
-                "Template",
-                "",
-                "Assets/Template.png",
-                "Description: ",
-                ITEM_CONTENT, 
-                behavioral));
+            //behavioral.Items.Add(new DesignPattern("Behavioral-Item-10",
+            //    "Template",
+            //    "",
+            //    "Assets/Template.png",
+            //    "Description: ",
+            //    ITEM_CONTENT, 
+            //    behavioral));
 
-            behavioral.Items.Add(new DesignPattern("Behavioral-Item-11",
-                "Visitor",
-                "",
-                "Assets/Visitor.png",
-                "Description: ",
-                ITEM_CONTENT,
-                behavioral)); 
+            //behavioral.Items.Add(new DesignPattern("Behavioral-Item-11",
+            //    "Visitor",
+            //    "",
+            //    "Assets/Visitor.png",
+            //    "Description: ",
+            //    ITEM_CONTENT,
+            //    behavioral)); 
 
-            this.AllGroups.Add(behavioral);
+            //this.AllGroups.Add(behavioral);
 
-            var structural = new DesignPatternGroup("Structural-Group",
-                "Structural",
-                "Design patterns which ease the design by identifying a simple way to realize relationships between entities.",
-                "Assets/Structural.png",
-                "Group description: Design patterns which ease the design by identifying a simple way to realize relationships between entities.");
+            //var structural = new DesignPatternGroup("Structural-Group",
+            //    "Structural",
+            //    "Design patterns which ease the design by identifying a simple way to realize relationships between entities.",
+            //    "Assets/Structural.png",
+            //    "Group description: Design patterns which ease the design by identifying a simple way to realize relationships between entities.");
 
-            structural.Items.Add(new DesignPattern("Structural-Item-1",
-                "Adapter",
-                "",
-                "Assets/Adapter.png",
-                "Description: ",
-                ITEM_CONTENT,
-                structural));
+            //structural.Items.Add(new DesignPattern("Structural-Item-1",
+            //    "Adapter",
+            //    "",
+            //    "Assets/Adapter.png",
+            //    "Description: ",
+            //    ITEM_CONTENT,
+            //    structural));
 
-            structural.Items.Add(new DesignPattern("Structural-Item-2",
-                "Bridge",
-                "",
-                "Assets/Bridge.png",
-                "Description: ",
-                ITEM_CONTENT,
-                structural));
+            //structural.Items.Add(new DesignPattern("Structural-Item-2",
+            //    "Bridge",
+            //    "",
+            //    "Assets/Bridge.png",
+            //    "Description: ",
+            //    ITEM_CONTENT,
+            //    structural));
 
-            structural.Items.Add(new DesignPattern("Structural-Item-3",
-                "Decorator",
-                "",
-                "Assets/Decorator.png",
-                "Description: ",
-                ITEM_CONTENT,
-                structural));
+            //structural.Items.Add(new DesignPattern("Structural-Item-3",
+            //    "Decorator",
+            //    "",
+            //    "Assets/Decorator.png",
+            //    "Description: ",
+            //    ITEM_CONTENT,
+            //    structural));
 
-            structural.Items.Add(new DesignPattern("Structural-Item-4",
-                "Facade",
-                "",
-                "Assets/Facade.png",
-                "Description: ",
-                ITEM_CONTENT,
-                structural));
+            //structural.Items.Add(new DesignPattern("Structural-Item-4",
+            //    "Facade",
+            //    "",
+            //    "Assets/Facade.png",
+            //    "Description: ",
+            //    ITEM_CONTENT,
+            //    structural));
 
-            structural.Items.Add(new DesignPattern("Structural-Item-5",
-                "Proxy",
-                "",
-                "Assets/Proxy.png",
-                "Description: ",
-                ITEM_CONTENT,
-                structural));
+            //structural.Items.Add(new DesignPattern("Structural-Item-5",
+            //    "Proxy",
+            //    "",
+            //    "Assets/Proxy.png",
+            //    "Description: ",
+            //    ITEM_CONTENT,
+            //    structural));
 
-            structural.Items.Add(new DesignPattern("Structural-Item-6",
-                "Flyweight",
-                "",
-                "Assets/Flyweight.png",
-                "Description: ",
-                ITEM_CONTENT,
-                structural));
+            //structural.Items.Add(new DesignPattern("Structural-Item-6",
+            //    "Flyweight",
+            //    "",
+            //    "Assets/Flyweight.png",
+            //    "Description: ",
+            //    ITEM_CONTENT,
+            //    structural));
                 
 
-            this.AllGroups.Add(structural); 
+            //this.AllGroups.Add(structural); 
         }
     }
 }
