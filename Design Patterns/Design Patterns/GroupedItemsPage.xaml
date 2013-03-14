@@ -27,19 +27,7 @@
             
             </CollectionViewSource>
         
-        <DataTemplate x:Key="AdTemplate">
-            <Grid Width="160" Height="600">
-                <UI:AdControl
-                    x:Name="adControl" 
-                    HorizontalAlignment="Center" 
-                    Height="600" 
-                    Margin="0,0,0,0" 
-                    Opacity="1"
-                    VerticalAlignment="Center" 
-                    Width="160" 
-                     ApplicationId="95737f6b-692f-4bd1-bfb5-4a6a7b666fee" AdUnitId="117712" /> 
-            </Grid>
-        </DataTemplate>
+      
     </Page.Resources>
 
     <!--
@@ -164,7 +152,7 @@
             	HorizontalAlignment="Right" 
             	Width="292" 
             	Height="62" 
-            	Margin="0,0,0,0" 
+            	Margin="0,0,20,0" 
             	Grid.Row="1"
             	Grid.Column="1"
             	Opacity="1"
@@ -205,7 +193,9 @@
                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="pageTitle" Storyboard.TargetProperty="Style">
                             <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource SnappedPageHeaderTextStyle}"/>
                         </ObjectAnimationUsingKeyFrames>
-
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="adControl" Storyboard.TargetProperty="Visibility">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+                        </ObjectAnimationUsingKeyFrames>
                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="itemListView" Storyboard.TargetProperty="Visibility">
                             <DiscreteObjectKeyFrame KeyTime="0" Value="Visible"/>
                         </ObjectAnimationUsingKeyFrames>

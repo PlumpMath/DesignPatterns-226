@@ -283,7 +283,7 @@ namespace Design_Patterns.DataModel
                 "Assets/AbstractFactory.png",
                 "Description: Provides an interface for creating families of related or dependent objects without specifying their concrete classes.",
                 "Assets/AbstractFactoryUML.png",
-                "Use an abstract factory pattern when:\n\n\tA system should be independent of how its products are created, composed and represented; a system should be configured with one of multiple families of products; a family of related product objects is designed to be used together, and you need to enforce this constraint. You want to provide a class library of products, and you want to reveal just their interfaces, not their implementations.\n\nAdvantages: \n\n\tIsolate concrete classes from the client. \n\tExchanging product families is easy. \n\tIt promotes consistency among products.\n\nDisadvantages: \n\n\tSupporting new kinds of products requires extending the abstract interface which implies that all of its derived concrete classes also must change. ", 
+                "Use an Abstract Factory pattern when:\n\n\tA system should be independent of how its products are created, composed and represented; a system should be configured with one of multiple families of products; a family of related product objects is designed to be used together, and you need to enforce this constraint. You want to provide a class library of products, and you want to reveal just their interfaces, not their implementations.\n\nAdvantages: \n\n\tAbstract factory isolates concrete classes from the client, which helps you control the classes of objects that an application creates. Exchanging product families is easy since the class of a concrete factory appears only once in an application: where it is instantiated. It promotes consistency among products. When prouct objects in a family are designed to work together, it's important that an application use objects from only one family at a time. Abstract Factory makes this easy to enforce.\n\nDisadvantages: \n\n\tSupporting new kinds of products requires extending the abstract interface which implies that all of its derived concrete classes also must change. Extending abstract factories to produce new kinds of Products isn't easy because the Abstract Factory interface fixes the set of product than can be created. Supporting new kinds of products essentially involves changing the Abstract Factory class and all of its subclasses.", 
                 creational));
 
             creational.Items.Add(new DesignPattern("Creational-Item-2",
@@ -292,7 +292,7 @@ namespace Design_Patterns.DataModel
                 "Assets/Builder.png",
                 "Description: Separates the construction of a complex object from its representation so that the same construction process can create different representations",
                 "Assets/BuilderUML.png",
-                "Use a builder pattern when:\n\n\t The algorithm for creating a complex object should be independent of the parts that make up the object and how they're assembled; the construction process must allow different representations for the object that's constructed",
+                "Use a builder pattern when:\n\n\t The algorithm for creating a complex object should be independent of the parts that make up the object and how they're assembled; the construction process must allow different representations for the object that's constructed. \n\nAdvantages:\n\n\tAllows you to vary a product's internal representation by providing the director with an abstract interface for constructing the product. Builder pattern encapsulates code for construction and representation and also provides control over steps for construction process.\n\nDisadvantages: \n\n\tRequires creating a separate ConcreteBuilder for each different type of Product.",
                 creational));
 
             creational.Items.Add(new DesignPattern("Creational-Item-3",
@@ -301,25 +301,25 @@ namespace Design_Patterns.DataModel
                 "Assets/FactoryMethod.png",
                 "Description: Defines an interface for creating an object but allows subclasses to decide which class to instantiate. Factory method allows a class to defer instantiation to subclasses.",
                 "Assets/FactoryMethodUML.jpeg",
-                ITEM_CONTENT,
+                "Use a Factory Method when:\n\n\tA class can't anticipate the class of objects it must create; a class wants its subclasses to specify the objects it creates; classes delegate responsibility to one of several helper subclasses, and you want to localize the knowledge of which helper subclass is the delegate.\n\nAdvantages:\n\n\tFactory methods provide hooks for sub-classes to create different concrete products. Factory methods connect parallel class hierarchies in such a way that it localizes the knowledge of which classes belong together.\n\nDisadvantages:\n\n\tA potential disadvantage of Factory methods is that clients might have to sub-class the creator class in order to create a particular concrete product object. Furthermore, the factory used for creating the objects is bound with the client code making it difficult to use a different factory for creating objects.",
                 creational));
 
             creational.Items.Add(new DesignPattern("Creational-Item-4",
                 "Prototype",
-                "Specify the kinds of objects to create using a prototypical instance, and create n ew objects by copying this prototype.",
+                "Specify the kinds of objects to create using a prototypical instance, and create new objects by copying this prototype.",
                 "Assets/Prototype.png",
                 "Description: Specify the kinds of objects to create using a prototypical instance, and create new objects by copying this prototype.",
                 "Assets/PrototypeUML.png",
-                ITEM_CONTENT,
+                "Use a Prototype pattern when:\n\n\tThe classes to instantiate are specified at run-time (i.e., dynamic loading); to avoid building a class hierarchy of factories that parallels the class hierarchy of products; instances of a class can have one of only a few different combinations of state. It may be more convenient to install a corresponding number of prototypes and clone them rather than instantiating the class manually each time with the appropriate state.\n\nAdvantages:\n\n\tAdding and removing products at the same time. Since Prototypes let you incorporate a new concrete product class into a system simply by registering a prototypical instance, it's possible for a client to install and remove prototypes at run-time. Specifying new objects by varying values; this allows users to define new 'classes' without programming. Specifying new objects by varying structure; build objects from parts and subparts. Reduced subclassing due to the ability to clone rather than asking a factory method to create a new object. Configuring an application with class dynamically.\n\nDisadvantages:\n\n\tEach subclass of Prototype must implement the Clone operation, which may be difficult.",
                 creational));
 
             creational.Items.Add(new DesignPattern("Creational-Item-5",
                 "Singleton",
-                "Ensure a class only has one instance, and provide a global point of access to it. ",
+                "Ensure a class only has one instance, and provide a global point of access to it.",
                 "Assets/Singleton.png",
-                "Description",
+                "Description: Ensure a class only has one instance, and provide a global point of access to it.",
                 "Assets/SingletonUML.png",
-                ITEM_CONTENT,
+                "Use a Singleton pattern when:\n\n\tThere must be exactly one instance of a class and it must be accessible to clients from a well-known access point; when the sole instance should be extensible by subclassing, and clients should be able to use an extended instance without modifying their code.\n\nAdvantages:\n\n\tAmongst the several benefits of the Singleton pattern are controlled access to sole instance. since the Singleton class encapsulates its sole instance, it can have strict control over how and when clients access it. The Singleton pattern is an improvement over global variables and thus is said to have reduced name space. The Singleton class may be subclassed, and it's easy to configure an application with an instance of this extended class, thus it's said to permit refinement of operations and representations.\n\nDisadvantages:\n\n\tSometimes difficult to test. Impossible to work with instance variables.",
                 creational)); 
                 
 

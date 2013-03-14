@@ -113,7 +113,29 @@ namespace Design_Patterns
                 settings.IsOpen = true;
             });
 
+            var PrivacyPolicy = new SettingsCommand("PrivacyPolicy", "Privacy Policy", (handler) =>
+                {
+                    var privacyPolicy = new SettingsFlyout();
+                    privacyPolicy.Content = new PrivacyPolicy();
+                    privacyPolicy.Background = new SolidColorBrush(_background);
+                    privacyPolicy.HeaderBrush = new SolidColorBrush(_background);
+                    privacyPolicy.HeaderText = "Privacy Policy";
+                    privacyPolicy.IsOpen = true; 
+                });
+
+            var References = new SettingsCommand("References", "References", (handler) =>
+            {
+                var privacyPolicy = new SettingsFlyout();
+                privacyPolicy.Content = new References();
+                privacyPolicy.Background = new SolidColorBrush(_background);
+                privacyPolicy.HeaderBrush = new SolidColorBrush(_background);
+                privacyPolicy.HeaderText = "References";
+                privacyPolicy.IsOpen = true;
+            }); 
+
             args.Request.ApplicationCommands.Add(About);
+            args.Request.ApplicationCommands.Add(PrivacyPolicy);
+            args.Request.ApplicationCommands.Add(References); 
         }
 
         /// <summary>
