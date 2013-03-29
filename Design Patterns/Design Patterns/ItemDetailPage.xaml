@@ -76,7 +76,7 @@
                                     </Paragraph>
                                     <Paragraph LineStackingStrategy="MaxHeight">
                                         <InlineUIContainer>
-                                            <Image x:Name="image" MaxHeight="480" Margin="0,20,0,250" Stretch="Uniform" Source="{Binding UMLImage}" AutomationProperties.Name="{Binding Title}"/>
+                                            <Image x:Name="image" MaxHeight="600" Margin="0,100,0,200" Stretch="Uniform" Source="{Binding UMLImage}" AutomationProperties.Name="{Binding Title}"/>
                                             
                                         </InlineUIContainer>
                                     </Paragraph>
@@ -131,6 +131,9 @@
                                             <ObjectAnimationUsingKeyFrames Storyboard.TargetName="image" Storyboard.TargetProperty="MaxHeight">
                                                 <DiscreteObjectKeyFrame KeyTime="0" Value="160"/>
                                             </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="image" Storyboard.TargetProperty="Margin">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="0,40,0,20"/>
+                                            </ObjectAnimationUsingKeyFrames>
                                         </Storyboard>
                                     </VisualState>
                                 </VisualStateGroup>
@@ -151,10 +154,10 @@
             <TextBlock x:Name="pageTitle" Text="{Binding Title}" Style="{StaticResource PageHeaderTextStyle}" Grid.Column="1" IsHitTestVisible="false"/>
             <UI:AdControl
             	x:Name="adControl" 
-            	HorizontalAlignment="Right" 
+            	HorizontalAlignment="Center" 
             	Width="292" 
             	Height="62" 
-            	Margin="0,0,0,0" 
+            	Margin="0,0,20,0" 
             	Grid.Row="1"
             	Grid.Column="1"
             	Opacity="1"

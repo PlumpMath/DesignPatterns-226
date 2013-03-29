@@ -8,8 +8,17 @@
     mc:Ignorable="d"
     d:DesignHeight="300"
     d:DesignWidth="400">
-    
-    <Grid Background="White">
 
+    <Grid Background="White" Margin="0">
+        <ScrollViewer HorizontalScrollMode="Disabled" VerticalScrollBarVisibility="Hidden" Margin="10,10,10,0">
+            
+        
+            <StackPanel Orientation="Vertical">
+                <Image Margin="10,20,10,20" Source="/Assets/DesignPatternsBook.jpg" Width="150" Height="150"/>
+                <TextBlock Margin="10,10,10,0" FontFamily="Segoe UI" FontSize="12" TextWrapping="Wrap"  Foreground="Gray" Text="The information contained within this application is largely influenced by the book Design Patterns: Elements of Reusable Object-Oriented Software, pictured above. For a more in-depth look into design patterns users are highly encouraged to get the book."/>
+
+                <TextBlock Margin="10,10,10,0" FontFamily="Segoe UI" FontSize="12" TextWrapping="Wrap"  Foreground="Gray" Text="This application is intended to fall under the fair-use doctrine as an educational and factual representation of design patterns."/>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </UserControl>

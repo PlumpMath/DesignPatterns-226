@@ -12,7 +12,7 @@
     <Grid Background="White">
         <StackPanel>
             <TextBlock FontFamily="Segoe UI" FontWeight="SemiLight" FontSize="14" TextWrapping="Wrap" Margin="10,10,10,10" Foreground="Black"
-                       Text="Design Patterns requires network access to power an ad which ultimately feeds a college student. Design patterns does not access, use, or transmit any of your information. "/>
+                       Text="Design Patterns requires network access to power an ad which ultimately feeds a college student. Design patterns does not access, use or transmit any of your information. "/>
         </StackPanel>
     </Grid>
 </UserControl>

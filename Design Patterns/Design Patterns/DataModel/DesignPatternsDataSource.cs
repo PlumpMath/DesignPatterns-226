@@ -281,7 +281,7 @@ namespace Design_Patterns.DataModel
                 "Abstract Factory",
                 "Declare an interface for creating different types of objects.",
                 "Assets/AbstractFactory.png",
-                "Description: Provides an interface for creating families of related or dependent objects without specifying their concrete classes.",
+                "Provides an interface for creating families of related or dependent objects without specifying their concrete classes.",
                 "Assets/AbstractFactoryUML.png",
                 "Use an Abstract Factory pattern when:\n\n\tA system should be independent of how its products are created, composed and represented; a system should be configured with one of multiple families of products; a family of related product objects is designed to be used together, and you need to enforce this constraint. You want to provide a class library of products, and you want to reveal just their interfaces, not their implementations.\n\nAdvantages: \n\n\tAbstract factory isolates concrete classes from the client, which helps you control the classes of objects that an application creates. Exchanging product families is easy since the class of a concrete factory appears only once in an application: where it is instantiated. It promotes consistency among products. When prouct objects in a family are designed to work together, it's important that an application use objects from only one family at a time. Abstract Factory makes this easy to enforce.\n\nDisadvantages: \n\n\tSupporting new kinds of products requires extending the abstract interface which implies that all of its derived concrete classes also must change. Extending abstract factories to produce new kinds of Products isn't easy because the Abstract Factory interface fixes the set of product than can be created. Supporting new kinds of products essentially involves changing the Abstract Factory class and all of its subclasses.", 
                 creational));
@@ -290,7 +290,7 @@ namespace Design_Patterns.DataModel
                 "Builder",
                 "Separate the construction of a complex object from its representation so that the same construction process can create different representations.",
                 "Assets/Builder.png",
-                "Description: Separates the construction of a complex object from its representation so that the same construction process can create different representations",
+                "Separates the construction of a complex object from its representation so that the same construction process can create different representations",
                 "Assets/BuilderUML.png",
                 "Use a builder pattern when:\n\n\t The algorithm for creating a complex object should be independent of the parts that make up the object and how they're assembled; the construction process must allow different representations for the object that's constructed. \n\nAdvantages:\n\n\tAllows you to vary a product's internal representation by providing the director with an abstract interface for constructing the product. Builder pattern encapsulates code for construction and representation and also provides control over steps for construction process.\n\nDisadvantages: \n\n\tRequires creating a separate ConcreteBuilder for each different type of Product.",
                 creational));
@@ -299,7 +299,7 @@ namespace Design_Patterns.DataModel
                 "Factory Method",
                 "Define an interface for creating an object but allows subclasses to decide which class to instantiate.",
                 "Assets/FactoryMethod.png",
-                "Description: Defines an interface for creating an object but allows subclasses to decide which class to instantiate. Factory method allows a class to defer instantiation to subclasses.",
+                "Defines an interface for creating an object but allows subclasses to decide which class to instantiate. Factory method allows a class to defer instantiation to subclasses.",
                 "Assets/FactoryMethodUML.jpeg",
                 "Use a Factory Method when:\n\n\tA class can't anticipate the class of objects it must create; a class wants its subclasses to specify the objects it creates; classes delegate responsibility to one of several helper subclasses, and you want to localize the knowledge of which helper subclass is the delegate.\n\nAdvantages:\n\n\tFactory methods provide hooks for sub-classes to create different concrete products. Factory methods connect parallel class hierarchies in such a way that it localizes the knowledge of which classes belong together.\n\nDisadvantages:\n\n\tA potential disadvantage of Factory methods is that clients might have to sub-class the creator class in order to create a particular concrete product object. Furthermore, the factory used for creating the objects is bound with the client code making it difficult to use a different factory for creating objects.",
                 creational));
@@ -308,7 +308,7 @@ namespace Design_Patterns.DataModel
                 "Prototype",
                 "Specify the kinds of objects to create using a prototypical instance, and create new objects by copying this prototype.",
                 "Assets/Prototype.png",
-                "Description: Specify the kinds of objects to create using a prototypical instance, and create new objects by copying this prototype.",
+                "Specify the kinds of objects to create using a prototypical instance, and create new objects by copying this prototype.",
                 "Assets/PrototypeUML.png",
                 "Use a Prototype pattern when:\n\n\tThe classes to instantiate are specified at run-time (i.e., dynamic loading); to avoid building a class hierarchy of factories that parallels the class hierarchy of products; instances of a class can have one of only a few different combinations of state. It may be more convenient to install a corresponding number of prototypes and clone them rather than instantiating the class manually each time with the appropriate state.\n\nAdvantages:\n\n\tAdding and removing products at the same time. Since Prototypes let you incorporate a new concrete product class into a system simply by registering a prototypical instance, it's possible for a client to install and remove prototypes at run-time. Specifying new objects by varying values; this allows users to define new 'classes' without programming. Specifying new objects by varying structure; build objects from parts and subparts. Reduced subclassing due to the ability to clone rather than asking a factory method to create a new object. Configuring an application with class dynamically.\n\nDisadvantages:\n\n\tEach subclass of Prototype must implement the Clone operation, which may be difficult.",
                 creational));
@@ -317,7 +317,7 @@ namespace Design_Patterns.DataModel
                 "Singleton",
                 "Ensure a class only has one instance, and provide a global point of access to it.",
                 "Assets/Singleton.png",
-                "Description: Ensure a class only has one instance, and provide a global point of access to it.",
+                "Ensure a class only has one instance, and provide a global point of access to it.",
                 "Assets/SingletonUML.png",
                 "Use a Singleton pattern when:\n\n\tThere must be exactly one instance of a class and it must be accessible to clients from a well-known access point; when the sole instance should be extensible by subclassing, and clients should be able to use an extended instance without modifying their code.\n\nAdvantages:\n\n\tAmongst the several benefits of the Singleton pattern are controlled access to sole instance. since the Singleton class encapsulates its sole instance, it can have strict control over how and when clients access it. The Singleton pattern is an improvement over global variables and thus is said to have reduced name space. The Singleton class may be subclassed, and it's easy to configure an application with an instance of this extended class, thus it's said to permit refinement of operations and representations.\n\nDisadvantages:\n\n\tSometimes difficult to test. Impossible to work with instance variables.",
                 creational)); 
@@ -325,157 +325,177 @@ namespace Design_Patterns.DataModel
 
             this.AllGroups.Add(creational);
 
-            //var behavioral = new DesignPatternGroup("Behavioral-Group",
-            //    "Behavioral",
-            //    "Design patterns which identify common communication patterns between objects and realize these patterns.",
-            //    "Assets/Behavioral.png",
-            //    "Group description: Design patterns which identify common communication patterns between objects and realize these patterns. ");
+            var behavioral = new DesignPatternGroup("Behavioral-Group",
+                "Behavioral",
+                "Design patterns which identify common communication patterns between objects and realize these patterns.",
+                "Assets/Behavioral.png",
+                "Group description: Design patterns which identify common communication patterns between objects and realize these patterns. ",
+                "");
 
-            //behavioral.Items.Add(new DesignPattern("Behavioral-Item-1", 
-            //    "Chain of Responsibility", 
-            //    "", 
-            //    "Assets/ChainOfResponsibility.png", 
-            //    "Description: ", 
-            //    ITEM_CONTENT, 
-            //    behavioral));
+            behavioral.Items.Add(new DesignPattern("Behavioral-Item-1",
+                "Chain of Responsibility",
+                "Provides a way of passing a request between a chain of objects.",
+                "Assets/ChainOfResponsibility.png",
+                "Provides a way of passing a request between a chain of objects.",
+                "Assets/ChainOfResponsibilityUML.png",
+                "Use a Chain of Responsibility when:\n\n\nThe design needs more than one object to handle a request and the handler is not known prior. The handler should be attained automatically. The Chain of Responsibility pattern is also useful when the design needs to issue a request to one of several objects without explicitly specifying the object.\n\nAdvantages: \n\n\tReduced coupling and added flexibility in assigning responsibilities to objects.\n\nDisadvantages:\n\n\tReceipt is not guaranteed since a request has no explicit receiver.",
+                behavioral));
 
-            //behavioral.Items.Add(new DesignPattern("Behavioral-Item-2",
-            //    "Command",
-            //    "",
-            //    "Assets/Command.png",
-            //    "Description: ",
-            //    ITEM_CONTENT,
-            //    behavioral));
+            behavioral.Items.Add(new DesignPattern("Behavioral-Item-2",
+                "Command",
+                "Encapsulate a request as an object, thereby letting you parameterize clients with different requests, queue or log requests, and support undoable operations.",
+                "Assets/Command.png",
+                "Encapsulate a request as an object, thereby letting you parameterize clients with different requests, queue or log requests, and support undoable operations.",
+                "Assets/CommandUML.png",
+                "Use a Command pattern when:\n\n\tYou want to parameterize objects by an action to perform; you want to specify, queue, and execute requests at different times; you want to support undo; you want to support logging changes so that they can be reapplied in case of a system crash; you want to structure a system around high-level operations built on primitives operations. \n\n\nAdvantages:\n\n\tDecouples the object that invokes the operation from the one that knows how to perform it. The Command pattern is also said to help your program by making it my flexible and extendible. \n\nDisadvantages:\n\n\tBlah \n\n",
+                behavioral));
 
-            //behavioral.Items.Add(new DesignPattern("Behavioral-Item-3",
-            //    "Interpreter",
-            //    "",
-            //    "Assets/Interpreter.png",
-            //    "Description: ",
-            //    ITEM_CONTENT,
-            //    behavioral)); 
+            behavioral.Items.Add(new DesignPattern("Behavioral-Item-3",
+                "Interpreter",
+                "Given a language, define a representation for its grammar along with an interpreter that uses the representation to interpret sentences in the language.",
+                "Assets/Interpreter.png",
+                "Given a language, define a representation for its grammar along with an interpreter that uses the representation to interpret sentences in the language.",
+                "Assets/Interpreter.jpg",
+                "Use an Interpreter pattern when:\n\n\tThere is a language to interpret and you can represent statements in the language as abstract syntax trees. The interpreter pattern works best for simple grammars and when efficiency is not a critical concern. For complex grammars, the class hierarchy for the grammar becomes large. Tools such as parser generators are a better alternative in such cases.\n\n\tThe interpreter pattern is widely used in compilers implemented with object-oriented languages. The interpreter pattern should be reserved for those cases in which you want to think of the class hierarchy as defining a language.\n\n\nAdvantages:\n\n\tIt's easy to change and extend the grammer because th e pattern uses classes to represent rules. Thus, you can use inheritance to change or extend the grammar. Furthermore, implementing a new grammar is easy and can often be automated and adding new ways to interpret existing expressions is also fairly simple. \n\nDisadvantages:\n\n\tComplex grammars are difficult to maintain. The interpreter pattern defines at least one class for every rule in the grammar, so grammars containing many rules quickly become unmanageable. \n\n",
+                behavioral));
 
-            //behavioral.Items.Add(new DesignPattern("Behavioral-Item-4", 
-            //    "Iterator", 
-            //    "", 
-            //    "Assets/Iterator.png", 
-            //    "Description: ",
-            //    ITEM_CONTENT, 
-            //    behavioral));
+            behavioral.Items.Add(new DesignPattern("Behavioral-Item-4",
+                "Iterator",
+                "Provide a way to access the elements of an aggregate object sequentially without exposing its underlying representation.",
+                "Assets/Iterator.png",
+                "Provide a way to access the elements of an aggregate object sequentially without exposing its underlying representation.",
+                "Assets/IteratorUML.png",
+                "Use an Iterator pattern when:\n\n\tYou want to access the contents of a collection of objects without exposing its internal representation. The Iterator pattern provides a uniform interface for traversing different aggregate structures to support polymorphic iteration and is able to support multiple types of traversals.\n\n\tIterators are common in object-oriented systems and most major class libraries offer iterators of some form.\n\n\nAdvantages:\n\n\tThe Iterator pattern has three important advantages: (1) It supports variations in the traversal of an aggregate allowing them to be traversed in many ways (2) Iterators simplify the aggregate interface (3) More than one traversal can be pending on an aggregate.",
+                behavioral));
 
-            //behavioral.Items.Add(new DesignPattern("Behavioral-Item-5",
-            //    "Mediator",
-            //    "",
-            //    "Assets/Mediator.png",
-            //    "Description: ",
-            //    ITEM_CONTENT,
-            //    behavioral));
+            behavioral.Items.Add(new DesignPattern("Behavioral-Item-5",
+                "Mediator",
+                "Define an object that encapsulates how a set of objects interact. Mediator promotes loose coupling by keeping objects from referring to each other explicitly, and it lets you vary their interaction independently.",
+                "Assets/Mediator.png",
+                "Define an object that encapsulates how a set of objects interact. Mediator promotes loose coupling by keeping objects from referring to each other explicitly, and it lets you vary their interaction independently.",
+                "Assets/MediatorUML.png",
+                "Use a Mediator pattern when:\n\n\tA set of objects communicate in well-defined but complex ways. In such scenarios the resulting interdependencies are often unstructured and difficult to understand. The Mediator pattern is useful when the behavior that's distributed between several classes should be customizable without a lot of subclassing. \n\n\nAdvantages:\n\n\tMediator pattern simplifies object protocols making the relationships between objects easier to understand, maintain and extend. Mediator localizes behavior that would otherwise be distributed among several objects thereby limiting subclassing. A mediator promotes loose coupling between colleagues making it easy to vary and reuse classes independently. ",
+                behavioral));
 
-            //behavioral.Items.Add(new DesignPattern("Behavioral-Item-6",
-            //    "Memento",
-            //    "",
-            //    "Assets/Memento.png",
-            //    "Description: ",
-            //    ITEM_CONTENT,
-            //    behavioral));
+            behavioral.Items.Add(new DesignPattern("Behavioral-Item-6",
+                "Memento",
+                "Without violating encapsulation, capture and externalize an object's internal state so that the object can be restored to this state later.",
+                "Assets/Memento.png",
+                "Without violating encapsulation, capture and externalize an object's internal state so that the object can be restored to this state later.",
+                "Assets/MementoUML.png",
+                "Use a Memento pattern when:\n\n\tA snapshot of an object's state must be saved so that it can be restored to that state later and when a direct interface to obtaining the state of an object would expose implementation details which breaks the object's encapsulation.\n\n\nAdvantages:\n\n\tThe Memento pattern provides a way of recording the internal state of an object without violating encapsulation of the object. \n\nDisadvantages:\n\n\tThe Memento pattern is known to be fairly expensive in terms of implementation and memory space. \n\n",
+                behavioral));
 
-            //behavioral.Items.Add(new DesignPattern("Behavioral-Item-7",
-            //    "Observer",
-            //    "",
-            //    "Assets/Observer.png",
-            //    "Description: ",
-            //    ITEM_CONTENT,
-            //    behavioral));
+            behavioral.Items.Add(new DesignPattern("Behavioral-Item-7",
+                "Observer",
+                "Define a one-to-many dependency between objects so that when one object changes state, all its dependents are notifed and updated automatically.",
+                "Assets/Observer.png",
+                "Define a one-to-many dependency between objects so that when one object changes state, all its dependents are notifed and updated automatically.",
+                "Assets/ObserverUML.png",
+                "Use an Observer pattern when:\n\n\n\n\nAdvantages:\n\n\tBlah \n\nDisadvantages:\n\n\tBlah \n\n",
+                behavioral));
 
-            //behavioral.Items.Add(new DesignPattern("Behavioral-Item-8",
-            //    "State",
-            //    "",
-            //    "Assets/State.png",
-            //    "Description: ",
-            //    ITEM_CONTENT,
-            //    behavioral));
+            behavioral.Items.Add(new DesignPattern("Behavioral-Item-8",
+                "State",
+                "Allow an object to alter its behavior when its internal state changes. The object will appear to change its class.",
+                "Assets/State.png",
+                "Allow an object to alter its behavior when its internal state changes. The object will appear to change its class.",
+                "Assets/StateUML.png",
+                "Use a State pattern when:\n\n\n\n\nAdvantages:\n\n\tBlah \n\nDisadvantages:\n\n\tBlah \n\n",
+                behavioral));
 
-            //behavioral.Items.Add(new DesignPattern("Behavioral-Item-9",
-            //    "Strategy",
-            //    "",
-            //    "Assets/Strategy.png",
-            //    "Description: ",
-            //    ITEM_CONTENT, behavioral));
+            behavioral.Items.Add(new DesignPattern("Behavioral-Item-9",
+                "Strategy",
+                "Define a family of algorithms, encapsulate each one, and make them interchangeable. Strategy lets the algorithm vary independently from clients that use it.",
+                "Assets/Strategy.png",
+                "Define a family of algorithms, encapsulate each one, and make them interchangeable. Strategy lets the algorithm vary independently from clients that use it.",
+                "Assets/StrategyUML.png",
+                "Use a Strategy pattern when:\n\n\n\n\nAdvantages:\n\n\tBlah \n\nDisadvantages:\n\n\tBlah \n\n", 
+                behavioral));
 
-            //behavioral.Items.Add(new DesignPattern("Behavioral-Item-10",
-            //    "Template",
-            //    "",
-            //    "Assets/Template.png",
-            //    "Description: ",
-            //    ITEM_CONTENT, 
-            //    behavioral));
+            behavioral.Items.Add(new DesignPattern("Behavioral-Item-10",
+                "Template Method",
+                "Define a skeleton of an algorithm in an operation, deferring some steps to subclasses. Template Method lets subclasses refine certain steps of an algorithm without changing the algorithm's structure.",
+                "Assets/Template.png",
+                "Define a skeleton of an algorithm in an operation, deferring some steps to subclasses. Template Method lets subclasses refine certain steps of an algorithm without changing the algorithm's structure.",
+                "Assets/TemplateUML.png",
+                "Use a Template Method when:\n\n\n\n\nAdvantages:\n\n\tBlah \n\nDisadvantages:\n\n\tBlah \n\n",
+                behavioral));
 
-            //behavioral.Items.Add(new DesignPattern("Behavioral-Item-11",
-            //    "Visitor",
-            //    "",
-            //    "Assets/Visitor.png",
-            //    "Description: ",
-            //    ITEM_CONTENT,
-            //    behavioral)); 
+            behavioral.Items.Add(new DesignPattern("Behavioral-Item-11",
+                "Visitor",
+                "Represent an operation to be performed on the elements of an object structure. Visitor lets you define a new operation without changing the classes of the elements on which it operates.",
+                "Assets/Visitor.png",
+                "Represent an operation to be performed on the elements of an object structure. Visitor lets you define a new operation without changing the classes of the elements on which it operates.",
+                "Assets/VisitorUML.png",
+                "Use a Template pattern when:\n\n\n\n\nAdvantages:\n\n\tBlah \n\nDisadvantages:\n\n\tBlah \n\n",
+                behavioral)); 
 
-            //this.AllGroups.Add(behavioral);
+            this.AllGroups.Add(behavioral);
 
-            //var structural = new DesignPatternGroup("Structural-Group",
-            //    "Structural",
-            //    "Design patterns which ease the design by identifying a simple way to realize relationships between entities.",
-            //    "Assets/Structural.png",
-            //    "Group description: Design patterns which ease the design by identifying a simple way to realize relationships between entities.");
+            var structural = new DesignPatternGroup("Structural-Group",
+                "Structural",
+                "Design patterns which ease the design by identifying a simple way to realize relationships between entities.",
+                "Assets/Structural.png",
+                "Group description: Design patterns which ease the design by identifying a simple way to realize relationships between entities.",
+                "");
 
-            //structural.Items.Add(new DesignPattern("Structural-Item-1",
-            //    "Adapter",
-            //    "",
-            //    "Assets/Adapter.png",
-            //    "Description: ",
-            //    ITEM_CONTENT,
-            //    structural));
+            structural.Items.Add(new DesignPattern("Structural-Item-1",
+                "Adapter",
+                "Convert the interface of a class into another interface clients expect. Adapter lets classes work together that couldn't otherwise because of incompatible interfaces.",
+                "Assets/Adapter.png",
+                "Convert the interface of a class into another interface clients expect. Adapter lets classes work together that couldn't otherwise because of incompatible interfaces.",
+                "Assets/AdapterUML.png",
+                "Use an Adapter when:\n\n\n\n\nAdvantages:\n\n\tBlah \n\nDisadvantages:\n\n\tBlah \n\n",
+                structural));
 
-            //structural.Items.Add(new DesignPattern("Structural-Item-2",
-            //    "Bridge",
-            //    "",
-            //    "Assets/Bridge.png",
-            //    "Description: ",
-            //    ITEM_CONTENT,
-            //    structural));
+            structural.Items.Add(new DesignPattern("Structural-Item-2",
+                "Bridge",
+                "Decouple an abstraction from its implementation so that the two can vary independently.",
+                "Assets/Bridge.png",
+                "Decouple an abstraction from its implementation so that the two can vary independently.",
+                "Assets/BridgeUML.png",
+                "Use a Bridge pattern when:\n\n\n\n\nAdvantages:\n\n\tBlah \n\nDisadvantages:\n\n\tBlah \n\n",
+                structural));
 
-            //structural.Items.Add(new DesignPattern("Structural-Item-3",
-            //    "Decorator",
-            //    "",
-            //    "Assets/Decorator.png",
-            //    "Description: ",
-            //    ITEM_CONTENT,
-            //    structural));
+            structural.Items.Add(new DesignPattern("Structural-Item-3",
+                "Decorator",
+                "Attach additional responsibilities to an object dynamically. Decorators provide a flexible alternative to subclassing for extending functionality.",
+                "Assets/Decorator.png",
+                "Attach additional responsibilities to an object dynamically. Decorators provide a flexible alternative to subclassing for extending functionality.",
+                "Assets/DecoratorUML.png",
+                "Use a Decorator pattern when:\n\n\n\n\nAdvantages:\n\n\tBlah \n\nDisadvantages:\n\n\tBlah \n\n",
+                structural));
 
-            //structural.Items.Add(new DesignPattern("Structural-Item-4",
-            //    "Facade",
-            //    "",
-            //    "Assets/Facade.png",
-            //    "Description: ",
-            //    ITEM_CONTENT,
-            //    structural));
+            structural.Items.Add(new DesignPattern("Structural-Item-4",
+                "Facade",
+                "Provide a unified interface to a set of interfaces in a subsystem. Facade defines a higher-level interface that makes the subsystem easier to use.",
+                "Assets/Facade.png",
+                "Provide a unified interface to a set of interfaces in a subsystem. Facade defines a higher-level interface that makes the subsystem easier to use.",
+                "Assets/FacadeUML.png",
+                "Use a Facade pattern when:\n\n\n\n\nAdvantages:\n\n\tBlah \n\nDisadvantages:\n\n\tBlah \n\n",
+                structural));
 
-            //structural.Items.Add(new DesignPattern("Structural-Item-5",
-            //    "Proxy",
-            //    "",
-            //    "Assets/Proxy.png",
-            //    "Description: ",
-            //    ITEM_CONTENT,
-            //    structural));
+            structural.Items.Add(new DesignPattern("Structural-Item-5",
+                "Proxy",
+                "Provide a surrogate or placeholder for another object to control access to it.",
+                "Assets/Proxy.png",
+                "Provide a surrogate or placeholder for another object to control access to it.",
+                "Assets/ProxyUML.png",
+                "Use a Proxy pattern when:\n\n\n\n\nAdvantages:\n\n\tBlah \n\nDisadvantages:\n\n\tBlah \n\n",
+                structural));
 
-            //structural.Items.Add(new DesignPattern("Structural-Item-6",
-            //    "Flyweight",
-            //    "",
-            //    "Assets/Flyweight.png",
-            //    "Description: ",
-            //    ITEM_CONTENT,
-            //    structural));
+            structural.Items.Add(new DesignPattern("Structural-Item-6",
+                "Flyweight",
+                "Use sharing to support large numbers of fine-grained objects efficiently.",
+                "Assets/Flyweight.png",
+                "Use sharing to support large numbers of fine-grained objects efficiently.",
+                "Assets/FlyweightUML.png",
+                "Use a Flyweight pattern when:\n\n\n\n\nAdvantages:\n\n\tBlah \n\nDisadvantages:\n\n\tBlah \n\n",
+                structural));
                 
 
-            //this.AllGroups.Add(structural); 
+            this.AllGroups.Add(structural); 
         }
     }
 }
