@@ -17,7 +17,7 @@
                 <Image Margin="10,20,10,20" Source="/Assets/DesignPatternsBook.jpg" Width="150" Height="150"/>
                 <TextBlock Margin="10,10,10,0" FontFamily="Segoe UI" FontSize="12" TextWrapping="Wrap"  Foreground="Gray" Text="The information contained within this application is largely influenced by the book Design Patterns: Elements of Reusable Object-Oriented Software, pictured above. For a more in-depth look into design patterns users are highly encouraged to get the book."/>
 
-                <TextBlock Margin="10,10,10,0" FontFamily="Segoe UI" FontSize="12" TextWrapping="Wrap"  Foreground="Gray" Text="This application is intended to fall under the fair-use doctrine as an educational and factual representation of design patterns."/>
+                <TextBlock Margin="10,10,10,0" FontFamily="Segoe UI" FontSize="12" TextWrapping="Wrap"  Foreground="Gray" Text="This application is intended to fall under the fair-use doctrine as an educational and factual representation of design patterns. &#xA; &#xA; &#xA;If you own and wish to have any images contained within this application removed, please e-mail me at griffin.fujioka@email.wsu.edu and they will be removed in a timely manner."/>
             </StackPanel>
         </ScrollViewer>
     </Grid>

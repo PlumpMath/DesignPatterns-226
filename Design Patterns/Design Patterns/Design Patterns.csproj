@@ -12,7 +12,9 @@
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <PackageCertificateKeyFile>Design Patterns_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateKeyFile>Design Patterns_StoreKey.pfx</PackageCertificateKeyFile>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <PackageCertificateThumbprint>9256067F73F69BA06DEB1080A9C668BDFA966585</PackageCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -147,6 +149,7 @@
       <SubType>Designer</SubType>
     </AppxManifest>
     <None Include="Common\ReadMe.txt" />
+    <None Include="Design Patterns_StoreKey.pfx" />
     <None Include="Design Patterns_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
@@ -214,6 +217,7 @@
     <Content Include="Assets\TemplateUML.png" />
     <Content Include="Assets\Visitor.png" />
     <Content Include="Assets\VisitorUML.png" />
+    <None Include="Package.StoreAssociation.xml" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">

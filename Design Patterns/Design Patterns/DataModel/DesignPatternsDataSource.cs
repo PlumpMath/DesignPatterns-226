@@ -392,7 +392,7 @@ namespace Design_Patterns.DataModel
                 "Assets/Observer.png",
                 "Define a one-to-many dependency between objects so that when one object changes state, all its dependents are notifed and updated automatically.",
                 "Assets/ObserverUML.png",
-                "Use an Observer pattern when:\n\n\n\n\nAdvantages:\n\n\tBlah \n\nDisadvantages:\n\n\tBlah \n\n",
+                "Use an Observer pattern when:\n\n\tAn abstraction has two asepcts with one being dependent on the other or when a change to one object requires changing others and you don't know how many objects need to be changed. Observer pattern is useful when an object should  be able to notify other objects without makign assumptions about who these objects are. That is, Observer pattern promotes loose coupling.\n\n\nAdvantages:\n\n\tObserver pattern allows you to reuse subjects without reusing their observers, and vice versa. Because Subject and Observer are not tightly coupled, they can belong to different layers of abstraction in the system. Furthermore, Observer pattern supports broadcast communication in that notifications may be sent between all interested objects that are subscribed to it.  \n\nDisadvantages:\n\n\tObserver pattern may cause problems when unexpected updates arrive. A seemingly small update to a subject may cause a cascade of updates to its observers. This problem is aggravated by the fact that the simple update protocol provides no details on what changed in the subject, forcing observers to deduce changes for themselves. \n\n",
                 behavioral));
 
             behavioral.Items.Add(new DesignPattern("Behavioral-Item-8",
@@ -401,7 +401,7 @@ namespace Design_Patterns.DataModel
                 "Assets/State.png",
                 "Allow an object to alter its behavior when its internal state changes. The object will appear to change its class.",
                 "Assets/StateUML.png",
-                "Use a State pattern when:\n\n\n\n\nAdvantages:\n\n\tBlah \n\nDisadvantages:\n\n\tBlah \n\n",
+                "Use a State pattern when:\n\n\tAn object's behavior depends on its state and it must change its behavior at run-time depending on that state. State pattern is helpful when operations have large, multipart conditional statements that depend on an object's state. State pattern allows you to put each branch of the conditional into a separate class, allowing you to treat the object's state as an object in its own right that can vary independently from other objects.\n\n\nAdvantages:\n\n\tState pattern localizes state-specific behavior and partitions behavior for different states. State pattern puts all behavior associated with a particular state into one object. Because all state-specific code lives in a state subclass, new states and transitions can be added easily by defining new subclasses. \n\nDisadvantages:\n\n\tSince State pattern distributes state-specific behavior for different states across several State subclasses, the number of classes is increased and can be very broad. Large conditional states are undesirable because each path may require its own subclass. \n\n",
                 behavioral));
 
             behavioral.Items.Add(new DesignPattern("Behavioral-Item-9",
@@ -410,7 +410,7 @@ namespace Design_Patterns.DataModel
                 "Assets/Strategy.png",
                 "Define a family of algorithms, encapsulate each one, and make them interchangeable. Strategy lets the algorithm vary independently from clients that use it.",
                 "Assets/StrategyUML.png",
-                "Use a Strategy pattern when:\n\n\n\n\nAdvantages:\n\n\tBlah \n\nDisadvantages:\n\n\tBlah \n\n", 
+                "Use a Strategy pattern when:\n\n\tMany related class differ only in their behavior. Strategy pattern provides a way to configure a class with one of many behaviors. Strategy pattern helps when you need different variants of an algorithm or when an algorithm uses data that clients shouldn't know about. \n\n\nAdvantages:\n\n\tStrategy pattern promotes families of related algorithms or behaviors. Inheritance can help factor out common functionality of the algorithms. Strategy pattern could potentially eliminate conditional statements for selecting desired behaviors. Additionally, strategies can provide different implementations of the same behavior such that the client can choose. \n\nDisadvantages:\n\n\tClients must be aware of different strategies and understand how they differ before it can select the appropriate one. Therefore you should use strategy pattern only when the variation in behavior is relevant to clients. Additionally, there is potential for some communication overhead between Strategy and Context. That is, it's likely that some context classes may use some of the algorithms that are implemented for them, or they may use none at all. Strategy pattern is known to cause an increase in the number of objects defined in an application. \n\n", 
                 behavioral));
 
             behavioral.Items.Add(new DesignPattern("Behavioral-Item-10",
@@ -419,7 +419,7 @@ namespace Design_Patterns.DataModel
                 "Assets/Template.png",
                 "Define a skeleton of an algorithm in an operation, deferring some steps to subclasses. Template Method lets subclasses refine certain steps of an algorithm without changing the algorithm's structure.",
                 "Assets/TemplateUML.png",
-                "Use a Template Method when:\n\n\n\n\nAdvantages:\n\n\tBlah \n\nDisadvantages:\n\n\tBlah \n\n",
+                "Use a Template Method when:\n\n\tYou want to implement the invariant parts of an algorithm once and leave it up to subclasses to implement the behavior that can vary. Common behavior among subclasses should  be factored and localized in a common class to avoid code duplication. Finally, Template Method pattern helps to control subclass extensions by allowing you to define a template method that calls 'hook' operations at specific points, thereby permitting extensions only at those points. Hook operations provide default behavior that subclasses can extend if necessary.\n\n\nAdvantages:\n\n\tTemplate methods are a fundamental technique for code reuse and are particularly important in class libraries, because they are the means for factoring out common behavior in library classes. Template methods lead to an inverted control structure that's sometimes referred to as 'the Hollywood principle', that is,'Don't call us, we'll call you'. This is in reference to how a parent class calls the operations of a subclass and not the other way around.",
                 behavioral));
 
             behavioral.Items.Add(new DesignPattern("Behavioral-Item-11",
@@ -428,7 +428,7 @@ namespace Design_Patterns.DataModel
                 "Assets/Visitor.png",
                 "Represent an operation to be performed on the elements of an object structure. Visitor lets you define a new operation without changing the classes of the elements on which it operates.",
                 "Assets/VisitorUML.png",
-                "Use a Template pattern when:\n\n\n\n\nAdvantages:\n\n\tBlah \n\nDisadvantages:\n\n\tBlah \n\n",
+                "Use a Visitor pattern when:\n\n\tAn object structure contains many classes of objects with differing interfaces and you want to perform operations on these objects that depend on their concrete classes. Additionally Visitor pattern is useful when you have many distinct and unrelated objects in an object structure, and you want to avoid polluting their classes with these operations.\n\n\nAdvantages:\n\n\tVisitor makes adding new operations easy. You can define a new operation over an object structure simply by adding a new visitor. While the Iterator pattern is restricted to visiting all elements that have a common parent class, Visitor pattern does not have this restriction. You can add any type of object to a Visitor interface. \n\nDisadvantages:\n\n\tVisitor pattern makes it difficult to add new subclasses of Element. The key consideration in applying the Visitor pattern is whether you are mostly likely to change the algorithm applied over an object structure or the classes of objects that make up the structure. Visitor pattern may compromise an object's encapsulation because the pattern innately assumes that the element interface is powerful enough to let visitors do their job. \n\n",
                 behavioral)); 
 
             this.AllGroups.Add(behavioral);
@@ -446,7 +446,7 @@ namespace Design_Patterns.DataModel
                 "Assets/Adapter.png",
                 "Convert the interface of a class into another interface clients expect. Adapter lets classes work together that couldn't otherwise because of incompatible interfaces.",
                 "Assets/AdapterUML.png",
-                "Use an Adapter when:\n\n\n\n\nAdvantages:\n\n\tBlah \n\nDisadvantages:\n\n\tBlah \n\n",
+                "Use an Adapter when:\n\n\tYou want to use an existing class and its interface does not match the one ou need. Adapter pattern allows you to create a reusable class that cooperates with unrelated or unforeseen classes which may have incompatible interfaces.\n\n\tThere are two types of adapter: class adapter and object adapter. A class adapter adapts Adaptee to Target by committing to a concrete Adaptee class. An object adapter lets a single Adapter work with many Adaptees - that is, the Adaptee itself and all of its subclasses. \n\n\nAdvantages:\n\n\tAdapater pattern allows for a flexible design and is able to connect two incompatible interfaces. \n\nDisadvantages:\n\n\tSometimes there are many adaptions that are needed in a chain-like effect which can result in added complexity. \n\n",
                 structural));
 
             structural.Items.Add(new DesignPattern("Structural-Item-2",
@@ -455,7 +455,7 @@ namespace Design_Patterns.DataModel
                 "Assets/Bridge.png",
                 "Decouple an abstraction from its implementation so that the two can vary independently.",
                 "Assets/BridgeUML.png",
-                "Use a Bridge pattern when:\n\n\n\n\nAdvantages:\n\n\tBlah \n\nDisadvantages:\n\n\tBlah \n\n",
+                "Use a Bridge pattern when:\n\n\tYou want to avoid a permanent binding between an abstraction and its implementation (i.e., when the implementation must be selected or switched at run-time). Bridge pattern is useful when both the abstractions and their implementations should be extensible by subclassing. In this case, the Bridge pattern lets you combine the different abstractions and implementations and extend them independently. \n\n\nAdvantages:\n\n\tBridge pattern decouples abstraction from implementation to avoid the binding between abstraction and implementation and to select the implementation at run time. Adapater pattern allows the interface and implementation to be varied independently.\n\n\n\n",
                 structural));
 
             structural.Items.Add(new DesignPattern("Structural-Item-3",
@@ -464,7 +464,7 @@ namespace Design_Patterns.DataModel
                 "Assets/Decorator.png",
                 "Attach additional responsibilities to an object dynamically. Decorators provide a flexible alternative to subclassing for extending functionality.",
                 "Assets/DecoratorUML.png",
-                "Use a Decorator pattern when:\n\n\n\n\nAdvantages:\n\n\tBlah \n\nDisadvantages:\n\n\tBlah \n\n",
+                "Use a Decorator pattern when:\n\n\tYou want to add responsibilities to individual objects dynamically and transparently without affecting other objects. Decorator pattern is useful when extension by subclassing is impractical. Sometimes a large number of independent extensions are possible and would produce an explosion of subclasses to support every combination. \n\n\nAdvantages:\n\n\tAdapter pattern helps to decompose optional or extra behavior into separate classes. Decorator provides a relatively low risk way to extend a system with new behavior like security, caching or extra instrumentation at configuration time. \n\nDisadvantages:\n\n\tThe main disadvantage of Decorator pattern is poor code maintainability. \n\n",
                 structural));
 
             structural.Items.Add(new DesignPattern("Structural-Item-4",
@@ -473,7 +473,7 @@ namespace Design_Patterns.DataModel
                 "Assets/Facade.png",
                 "Provide a unified interface to a set of interfaces in a subsystem. Facade defines a higher-level interface that makes the subsystem easier to use.",
                 "Assets/FacadeUML.png",
-                "Use a Facade pattern when:\n\n\n\n\nAdvantages:\n\n\tBlah \n\nDisadvantages:\n\n\tBlah \n\n",
+                "Use a Facade pattern when:\n\n\tYou want to provide a simple interface to a complex subsystem. A facade can provide a simple default view of the subsystem that will suffice for most clients. Facade pattern is useful when there are many dependencies between clients and the implementation classes of an abstraction. Finally, Facade pattern allows you to layer your subsystems and allow you to simplify the dependencies between layers. \n\n\nAdvantages:\n\n\tFacade pattern shields clients from subsystem components, thereby reducing the number of objects that clients deal with and making the subsystem easier to use. Facade pattern promotes weak coupling between the subsystem and its clients. Weak coupling allows you to vary the components of the subsystem without affecting its clients. Finally, Facade pattern does not prevent applications from using subsystem classes if they need to. \n\nDisadvantages:\n\n\tYou may lose some functionality contained in the lower level of classes. \n\n",
                 structural));
 
             structural.Items.Add(new DesignPattern("Structural-Item-5",
@@ -482,7 +482,7 @@ namespace Design_Patterns.DataModel
                 "Assets/Proxy.png",
                 "Provide a surrogate or placeholder for another object to control access to it.",
                 "Assets/ProxyUML.png",
-                "Use a Proxy pattern when:\n\n\n\n\nAdvantages:\n\n\tBlah \n\nDisadvantages:\n\n\tBlah \n\n",
+                "Use a Proxy pattern when:\n\n\tThere is a need for a more versatile or sophisticated reference to an object than a simpler pointer. A remote proxy provides a local representative for an object in a different address space. A virtual proxy creates expensive objects on demand. A protection proxy controls access to the original object. A smart reference is a replacement for a bare pointer that performs additional actions when an object is accessed.\n\n\nAdvantages:\n\n\t Improved security and avoidance of duplicating objects of huge size.",
                 structural));
 
             structural.Items.Add(new DesignPattern("Structural-Item-6",
@@ -491,7 +491,7 @@ namespace Design_Patterns.DataModel
                 "Assets/Flyweight.png",
                 "Use sharing to support large numbers of fine-grained objects efficiently.",
                 "Assets/FlyweightUML.png",
-                "Use a Flyweight pattern when:\n\n\n\n\nAdvantages:\n\n\tBlah \n\nDisadvantages:\n\n\tBlah \n\n",
+                "Use a Flyweight pattern when all of the following are true: An application uses a large number of objects, storage costs are high because of the sheer quantity of objects, most object states can be made extrinsic, many groups of objects  may be replaced by relatively few shared objects and the application doesn't depend on object identify. \n\nAdvantages:\n\n\tSpace saving, which increase as more flyweights are shared. \n\nDisadvantages:\n\n\tFlyweights may introduce run-time costs associated with transferring, finding, and/or computing extrinsic state. \n\n",
                 structural));
                 
 
